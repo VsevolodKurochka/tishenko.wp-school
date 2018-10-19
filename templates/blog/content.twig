@@ -4,7 +4,7 @@
       <div class="col-12 col-sm-8 col-md-9">
         <div class="row">
           {% set i = 0 %}
-          {% for post in blog %}
+          {% for post in posts %}
 
             {% set i = i + 1 %}
             {% set options = {} %}
@@ -12,7 +12,8 @@
               {% set class = "post_large" %}
               {% 
                 set options = {
-                  'preview_length': 45
+                  'preview_length': 45,
+                  'enable_date': true
                 }
               %}
             {% else %}

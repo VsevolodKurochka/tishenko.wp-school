@@ -28,6 +28,7 @@
         </div>
         <div class="post__footer">
           <a href="{{post.link}}" class="btn btn_lg btn_border-brand-2 post__link effect effect_bounce-top">Читать статью</a>
+          {% if options.enable_date %}<span class="post__date">{{post.date}}</span>{% endif %}
         </div>
       </div>  
     </div>
