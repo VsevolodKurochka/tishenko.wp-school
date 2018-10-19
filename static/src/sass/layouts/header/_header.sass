@@ -3,15 +3,40 @@
 	+py(60px)
 	+ta(center)
 	+blackout()
+	+c($color-white)
+
+	&_front
+		+mt(0)
 
 	+min(sm)
 		+py(100px)
 
 	+min(md)
 		+py(160px)
+
+	> .row
+		+mx(0)
 			
 	&__title
 		+mt(0)
 		+ff('secondary')
 		+c($color-white)
 		text-shadow: 0px 7px 12px rgba(0, 0, 0, 0.18)
+
+	&__subtitle
+		+mb(30px)
+		+min(md)
+			+mb(45px)
+	
+	&__list
+		ul
+			+min(sm)
+				+d(flex)
+				+jc(center)
+
+		li
+			+fs(14px)
+			+ta(left)
+
+			+min(sm)
+				+offset('r', 30px)

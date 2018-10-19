@@ -1,6 +1,9 @@
 .list
 	list-style: none
 
+	ul
+		list-style: none
+
 	li
 		+r()
 
@@ -8,11 +11,12 @@
 			content: ""
 			+a()
 
-	&_cancel
+	&_check
 		li
 			+pl(30px)
 
 			&:after
 				+t(0)
 				+l(0)
-				+size(37px)
+				+size(20px, 16px)
+				+bgi('../img/icon-check.png')
