@@ -1,3 +1,18 @@
 .header
+	+r()
+	+py(60px)
+	+ta(center)
+	+min(sm)
+		+py(100px)
+	+min(md)
+		+py(160px)
+	&:before
+		content: ""
+		+a(0,0)
+		+size(100%)
+		+bgi('../img/bg-part.jpg')
 	&__title
-		margin-top: 0
+		+mt(0)
+		+ff('secondary')
+		+c($color-white)
+		text-shadow: 0px 7px 12px rgba(0, 0, 0, 0.18)
