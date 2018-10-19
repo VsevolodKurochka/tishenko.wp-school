@@ -1,0 +1,16 @@
+.post
+	+offset('b', 45px)
+	
+	&__inner
+		+bgc($color-white)
+		box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15)
+
+	&__header
+		&-image
+			border-radius: 5px 5px 0 0
+			+w(100%)
+
+	&__body
+		padding: 30px 15px
+		+min(md)
+			+px(30px)

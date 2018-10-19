@@ -1,29 +1,28 @@
 {% macro header(title, image, type) %}
-	{% if type %}
-		{% set titleType = type %}
-	{% else %}
-		{% set titleType = '1' %}
-	{% endif %}
-	<header class="header wave_bottom" style="background-image: url({{image}})">
+  {% if type %}
+    {% set titleType = type %}
+  {% else %}
+    {% set titleType = '1' %}
+  {% endif %}
+  <header class="header wave_bottom" style="background-image: url({{image}})">
     <div class="container">
       <h{{titleType}} class="header__title title-md">{{title}}</h{{titleType}}>
     </div>
-	</header>
+  </header>
 {% endmacro %}
 {% macro post(class, post) %}
-	<div class="post {{class}}">
-		<div class="post__header">
-			<p class="post__header-category">{{ post.terms('category') | join(', ') }}</p>
-			<h3 class="post__header-title">{{post.title}}</h3>
-		</div>
-		<div class="post__content">
-			<div class="post__content-info">
-        <img src="{{post.thumbnail|resize(126,126)}}" alt="{{post.name}}" class="post__content-info-image">
-        <div class="post__content-info-body">
-          <div class="post__content-info-body-excerpt">{{post.preview.read_more('').end('').length(20)}}</div>
-          <a href="{{post.link}}" class="review__content-info-body-link">Читать полностью</a>
-        </div>
+  <div class="post {{class}}">
+    <div class="post__inner">
+      <div class="post__header">
+        <img src="{{post.thumbnail|resize(800, 380)}}" alt="{{post.title}}" class="post__header-image">
       </div>
-		</div>
-	</div>
+      <div class="post__body">
+        <a href="{{post.link}}" class="post__title">{{post.title}}</a>
+        <div class="post__preview">{{post.preview.read_more('').end('').length(20)}}</div>
+        <div class="post__footer">
+          <a href="{{post.link}}" class="btn btn_border-brand-1 review__link">Читать статью</a>
+        </div>
+      </div>  
+    </div>
+  </div>
 {% endmacro %}

@@ -8,8 +8,18 @@ $post = new TimberPost();
 
 $context['post'] = $post;
 
-$context['posts'] = new Timber\PostQuery();
+global $paged;
+if (!isset($paged) || !$paged){
+    $paged = 1;
+}
+$args = array(
+	'post_type' 			=> 'post',
+	'posts_per_page' 	=> 6,
+	'post_status'		 	=> 'publish',
+	'paged' => $paged
+);
 
-print_r($context['posts']);
+$context['post'] = $post;
+$context['blog'] = new Timber\PostQuery($args);
 
 Timber::render( array( 'template-blog.twig' ), $context );
