@@ -48,6 +48,7 @@ class StarterSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'widgets_init', array( $this, 'generate_widgets' ) );
 
 
 		add_action( 'wp_footer', array( $this, 'register_scripts' ) );
@@ -84,6 +85,17 @@ class StarterSite extends TimberSite {
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Меню в шапке', 'visotskiy' ),
 		) );
+	}
+
+	function generate_widgets(){
+		register_sidebar( array(
+			'name' => 'Сайдбар для блога',
+			'id' => 'blog_sidebar',
+			'before_widget' => '<div class="sidebar__item">',
+			'after_widget' => '</div>',
+			'before_title' => '<p class="sidebar__title">',
+			'after_title' => '</p>',
+		));
 	}
 
 	function add_options_page() {

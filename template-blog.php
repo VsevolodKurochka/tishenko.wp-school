@@ -22,4 +22,6 @@ $args = array(
 $context['post'] = $post;
 $context['blog'] = new Timber\PostQuery($args);
 
+$context['blog_sidebar'] = Timber::get_widgets('blog_sidebar');
+
 Timber::render( array( 'template-blog.twig' ), $context );
