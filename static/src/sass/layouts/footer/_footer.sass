@@ -4,10 +4,10 @@
 	+bgc(#181818)
 
 	.custom-logo-link
-		display: block
+		+d(block)
 
 		img
-			width: auto
+			+w(auto)
 			max-height: 30px
 	
 	&__row
@@ -15,19 +15,29 @@
 			+ai(center)
 	
 	&__menu
+		+min(sm)
+			text-align: right
 		li
-			display: block
+			+d(block)
+			
 			+max(sm)
 				+offset('b', 15px)
+			
+			+min(sm)
 
-		+min(sm)
-			+ta(right)
-			li
-				display: inline-block
+				+d(inline-block)
 				vertical-align: middle
 				+offset('r', 15px)
-		a
-			+c(#525252)
-			+fs(14px)
-			text-decoration: none
-			+fw(bold)
+			
+			a
+				+c(#525252)
+				+fs(14px)
+				text-decoration: none
+				+fw(bold)
+				+tr()
+
+				&:hover
+					+c(lighten(#525252, 15%))
+
+			&.current-menu-item a
+				+c(lighten(#525252, 15%))
