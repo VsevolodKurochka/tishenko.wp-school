@@ -2,20 +2,14 @@
 	+r()
 	+py(60px)
 	+ta(center)
-	background-size: cover
+	+blackout()
+
 	+min(sm)
 		+py(100px)
+
 	+min(md)
 		+py(160px)
-	+min(lg)
-		@media only screen
-			background-attachment: fixed
-	&:before
-		content: ""
-		+a(0,0)
-		+size(100%)
-		+bgi('../img/bg-part.jpg', 0 0, repeat, unset)
-		opacity: 0.9
+			
 	&__title
 		+mt(0)
 		+ff('secondary')

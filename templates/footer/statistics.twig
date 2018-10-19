@@ -1,0 +1,17 @@
+{% if function('is_front_page') %}
+  {% set image = options.footer_bg_2 %}
+  {% set person = options.footer_person_2 %}
+  {% set person_class = "statistics__person_2" %}
+{% else %}
+  {% set image = options.footer_bg_1 %}
+  {% set person = options.footer_person_1 %}
+  {% set person_class = "statistics__person_1" %}
+{% endif %}
+<section class="statistics wave_top" style="background-image: url({{image}})">
+  <img src="{{person}}" alt="{{options.footer_title}}" class="statistics__person {{person_class}}">
+  <div class="container">
+    <p class="statistics__subtitle title-sm">{{options.footer_subtitle}}</p>
+    <p class="statistics__title title-md">{{options.footer_title}}</p>
+    <button class="btn btn_lg btn_brand-1" data-action="modal" data-open="#modal-form">{{options.footer_btn}}</button>
+  </div>
+</section>

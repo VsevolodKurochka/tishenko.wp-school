@@ -2,10 +2,10 @@
 $title-xs: ("title-xs": ('default': 18px, 'xs': 20px))
 
 /// Define sizes for title-sm
-$title-sm: ("title-sm": ('default': 20px, 'sm': 20px, 'md': 30px, 'lg': 40px))
+$title-sm: ("title-sm": ('default': 18px, 'sm': 20px, 'md': 22px, 'lg': 24px))
 
 /// Define sizes for title-md
-$title-md: ("title-md": ('default': 25px, 'sm': 30px, 'md': 35px, 'lg': 42px))
+$title-md: ("title-md": ('default': 25px, 'sm': 30px, 'md': 35px, 'lg': 40px))
 
 /// Define sizes for title-lg
 $title-lg: ("title-lg": ('default': 30px, 'sm': 40px, 'md': 50px, 'lg': 60px))
@@ -18,7 +18,6 @@ $sizes: map-merge($sizes, $title-lg)
 %title-default
 	+my(5px, 15px)
 	+lh(1.2)
-	+fw(normal)
 
 .title
 	&-xs

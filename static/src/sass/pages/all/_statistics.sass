@@ -1,0 +1,34 @@
+.statistics
+	+r()
+	+py(60px, 45px)
+	+ta(center)
+	+blackout()
+	+c($color-white)
+
+	+min(sm)
+		+mt(200px)
+		+py(100px, 60px)
+
+	+min(md)
+		+mt(280px)
+		+py(175px, 75px)
+
+	&__person
+		+a(null, null, 70%)
+		z-index: 2
+		&_1
+			left: 0
+
+		&_2
+			right: 0
+
+	&__subtitle
+		+mb(15px)
+		+min(sm)
+			+mb(30px)
+
+	&__title
+		+mb(45px)
+		+fw(bold)
+		+ff('secondary')
+		text-transform: uppercase
