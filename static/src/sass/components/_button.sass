@@ -7,7 +7,7 @@ $btn-large-padding: 15px 25px
 $btn-large-font-size: 18px
 
 // Button border
-$btn-border-width: 3px
+$btn-border-width: 2px
 $btn-border-style: solid
 
 //-
@@ -19,7 +19,20 @@ $btn-border-style: solid
 	+btn-size($btn-padding, $btn-font-size)
 
 	&_brand-1
-		background-image: linear-gradient( 0deg, $color-brand-1 0%, $color-brand-2 100%);
+		background-image: linear-gradient( 0deg, $color-brand-1 0%, $color-brand-2 100%)
+
+	&_border
+		&-brand-1
+			border-radius: 30px
+			border: $btn-border-width $btn-border-style $color-brand-1
+		&-brand-2
+			+c($color-brand-2)
+			border-radius: 30px
+			border: $btn-border-width $btn-border-style $color-brand-2
+			&:before
+				+bgc($color-brand-2)
+			&:hover
+				+c($color-white)
 
 	&-group &
 		margin: 5px
