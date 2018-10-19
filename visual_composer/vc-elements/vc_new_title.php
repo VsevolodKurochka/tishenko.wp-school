@@ -39,10 +39,9 @@ class vcInfoBox extends WPBakeryShortCode {
 										),
 										array(
 											"type" => "textfield",
-											"holder" => "div",
 											"class" => "",
 											"heading" => __( "Очередность заголовка", "visotskiy" ),
-											"param_name" => "status",
+											"param_name" => "title_status",
 											"value" => __( "", "visotskiy" ),
 											"description" => __( "1,2,3,4,5,6", "visotskiy" )
 										),
@@ -51,7 +50,25 @@ class vcInfoBox extends WPBakeryShortCode {
 											"holder" => "div",
 											"class" => "",
 											"heading" => __( "Дополнительный класс", "visotskiy" ),
-											"param_name" => "add_class",
+											"param_name" => "title_class",
+											"value" => __( "", "visotskiy" ),
+											"description" => __( "Необязательно.", "visotskiy" )
+										),
+										array(
+											"type" => "textarea",
+											"holder" => "div",
+											"class" => "",
+											"heading" => __( "Подзаголовок", "visotskiy" ),
+											"param_name" => "subtitle",
+											"value" => __( "", "visotskiy" ),
+											"description" => __( "Введите Заголовок.", "visotskiy" )
+										),
+										array(
+											"type" => "textfield",
+											"holder" => "div",
+											"class" => "",
+											"heading" => __( "Дополнительный класс", "visotskiy" ),
+											"param_name" => "subtitle_class",
 											"value" => __( "", "visotskiy" ),
 											"description" => __( "Необязательно.", "visotskiy" )
 										)
@@ -69,16 +86,21 @@ class vcInfoBox extends WPBakeryShortCode {
 				extract(
 						shortcode_atts(
 								array(
-									'add_class' => '',
-									'status'		=> '2',
-									'title'			=> ''
+									'title'								=> '',
+									'title_class' 				=> '',
+									'title_status'				=> '3',
+									'subtitle'						=> '',
+									'subtitle_class' 			=> '',
 								), 
 								$atts
 						)
 				);
 				 
 				// Fill $html var with data
-				$html = '<h'.$status.' class="section__title title-sm '.$add_class.'">' . $title . '</h'.$status.'>';
+				$html = '<div class="section__header">';
+					$html .= '<h'.$title_status.' class="section__title title-sm '.$title_class.'">' . $title . '</h'.$title_status.'>';
+					$html .= '<p'.$subtitle_status.' class="section__subtitle '.$subtitle_class.'">' . $subtitle . '</h'.$subtitle_status.'>';
+				$html .= '</div>';
 				 
 				return $html;
 				 

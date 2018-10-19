@@ -30,7 +30,7 @@ class vcNewIcon extends WPBakeryShortCode {
 								'params' => array(
 										array(
 											'type' => 'attach_image',
-											'holder' => 'img',
+											'holder' => 'div',
 											'class' => 'title-class',
 											'heading' => __( 'Выберите картинку', 'school' ),
 											'param_name' => 'image_url',
@@ -41,14 +41,38 @@ class vcNewIcon extends WPBakeryShortCode {
 										),
 										
 										array(
-											"type" => "textarea",
+											"type" => "textarea_html",
 											"holder" => "div",
 											"class" => "",
 											"heading" => __( "Описание:", "school" ),
-											"param_name" => "icon_content",
+											"param_name" => "content",
 											"value" => __( "", "school" ),
 											"description" => __( "Введите описание.", "school" )
-										)
+										),
+
+										array(
+											'type' => 'textfield',
+											'holder' => 'p',
+											'class' => 'title-class',
+											'heading' => __( 'Название кнопки:', 'school' ),
+											'param_name' => 'btn_name',
+											'value' => "",
+											'description' => __( 'Введите название кнопки.', 'school' ),
+											'admin_label' => false,
+											'weight' => 0
+										),
+
+										array(
+											'type' => 'vc_link',
+											'holder' => 'p',
+											'class' => 'title-class',
+											'heading' => __( 'Ссылка кнопки:', 'school' ),
+											'param_name' => 'btn_link',
+											'value' => "",
+											'description' => __( 'Введите ссылку кнопки.', 'school' ),
+											'admin_label' => false,
+											'weight' => 0
+										),
 
 								),
 						)
@@ -64,8 +88,9 @@ class vcNewIcon extends WPBakeryShortCode {
 				extract(
 						shortcode_atts(
 								array(
-									'image_url' 		=> '',
-									'icon_content'	=> ''
+									'image_url' 	=> '',
+									'btn_name'		=> '',
+									'btn_link'		=> ''
 								), 
 								$atts
 						)
@@ -81,7 +106,10 @@ class vcNewIcon extends WPBakeryShortCode {
 						<img src="'.$img.'" alt="'.$title.'" class="icon__header-image">
 					</div>
 					<div class="icon__content article">
-						'.wpautop($icon_content).'
+						'.wpautop($content).'
+					</div>
+					<div class="icon__footer">
+						<a href="'.site_url($btn_href["url"]).'" class="btn btn_brand-1 icon__btn effect effect_bounce-top" target="_blank">'.$btn_name.'</a>
 					</div>
 				</div>';
 
