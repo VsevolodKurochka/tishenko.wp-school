@@ -1,17 +1,1 @@
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-8 col-md-9">
-        <div class="blog__articles">
-          {% for post in posts %}
-            {{siteMacros.post('col-12 col-sm-6', post)}}
-          {% endfor %}
-        </div>
-        {{function('wp_pagenavi')}}
-      </div>
-      <div class="col-12 col-sm-4 col-md-3">
-        {% include 'sidebar.twig' %}
-      </div>
-    </div>
-  </div>
-</section>
+{{siteMacros.blog(posts, 'category', wp_pagenavi )}}

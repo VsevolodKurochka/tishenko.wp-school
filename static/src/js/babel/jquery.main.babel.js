@@ -48,9 +48,10 @@ $(document).ready(function(){
 		});
 
 		$('.wave_bottom')
-			.append(`<img src="${window.location.protocol}//${window.location.hostname}:${window.location.port}/wp-content/themes/tishenko.wp-school/static/build/img/wave-top.png" class="wave_bottom-image" />`)
+			.append(`<img src="${window.location.protocol}//${window.location.hostname}:${window.location.port}/wp-content/themes/tishenko.wp-school/static/build/img/wave-bottom.png" class="wave_bottom-image" />`);
 
-		console.log('jquery');
+		$('.wave_top')
+			.append(`<img src="${window.location.protocol}//${window.location.hostname}:${window.location.port}/wp-content/themes/tishenko.wp-school/static/build/img/wave-top.png" class="wave_top-image" />`);
 	
 	// Develope
 });	

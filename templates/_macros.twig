@@ -10,6 +10,7 @@
     </div>
   </header>
 {% endmacro %}
+
 {% macro post(class, post, options) %}
   <div class="post {{class}}">
     <div class="post__inner">
@@ -33,4 +34,46 @@
       </div>  
     </div>
   </div>
+{% endmacro %}
+
+{% macro blog(posts, type, navigation) %}
+  {% import _self as macro %}
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-8 col-md-9">
+          <div class="row">
+            {% set i = 0 %}
+            {% for post in posts %}
+
+              {% set i = i + 1 %}
+              {% set options = {} %}
+              
+              {% if i == 1 %}
+                {% set class = "post_large" %}
+                {% 
+                  set options = {
+                    'preview_length': 45,
+                    'enable_date': true
+                  }
+                %}
+              {% else %}
+                {% set class = "post_small col-sm-6" %}
+              {% endif %}
+
+              {{
+                macro.post("#{class} col-12", post, options)
+              }}
+              
+            {% endfor %}
+          </div>
+          {{navigation}}
+        </div>
+        <div class="col-12 col-sm-4 col-md-3">
+          {% include 'sidebar.twig' %}
+        </div>
+      </div>
+    </div>
+  </section>
 {% endmacro %}

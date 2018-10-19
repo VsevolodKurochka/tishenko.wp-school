@@ -40,4 +40,10 @@ $context['term'] = new TimberTerm();
 $context['blog_sidebar'] = Timber::get_widgets('blog_sidebar');
 $context['posts'] = new Timber\PostQuery();
 
+$context['wp_pagenavi'] = wp_pagenavi(
+	[
+		'echo' => false
+	]
+);
+
 Timber::render( $templates, $context );
