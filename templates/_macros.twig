@@ -36,7 +36,7 @@
   </div>
 {% endmacro %}
 
-{% macro blog(posts, type, navigation) %}
+{% macro blog(posts, navigation, sidebar ) %}
   {% import _self as macro %}
 
   <section class="section">
@@ -70,8 +70,8 @@
           </div>
           {{navigation}}
         </div>
-        <div class="col-12 col-sm-4 col-md-3">
-          {% include 'sidebar.twig' %}
+        <div class="sidebar col-12 col-sm-4 col-md-3">
+          {{sidebar}}
         </div>
       </div>
     </div>
