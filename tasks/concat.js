@@ -16,10 +16,14 @@ const concatSrc = [
 	`${folders.assetsSrc}/js/libs/vanilla.main.babel.min.js`
 ];
 
-// Task `scripts`
+// Task `Concat`
 gulp.task('concat', () =>
 	gulp.src(concatSrc)
 		.pipe(concat('scripts.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(`${folders.assetsBuild}/js`))
+);
+
+gulp.task('concat:watch', () =>
+	gulp.watch(concatSrc, gulp.series('concat', reload))
 );

@@ -227,5 +227,7 @@
 			document.body.style.cursor = 'pointer';
 		}
 
+		console.log('vanilla');
+
 	});
 }());

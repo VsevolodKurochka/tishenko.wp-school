@@ -46,6 +46,11 @@ $(document).ready(function(){
 				$(tabTarget).fadeIn(0);
 				$(".tabs__content > div").not($(tabTarget)).fadeOut(0);
 		});
+
+		$('.wave_bottom')
+			.append(`<img src="${window.location.protocol}//${window.location.hostname}:${window.location.port}/wp-content/themes/tishenko.wp-school/static/build/img/wave-top.png" class="wave_bottom-image" />`)
+
+		console.log('jquery');
 	
 	// Develope
 });	
