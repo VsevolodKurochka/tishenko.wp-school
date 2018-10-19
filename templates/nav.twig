@@ -13,6 +13,9 @@
 				<nav class="nav__menu col-12 col-md-6" id="js-navigation-menu">
 					{% include "menu.twig" with {'menu': menu.get_items} %}
 				</nav>
+        <div class="nav__addition {{class}}" id="js-nav-addition">
+          <button class="btn btn_brand-1 nav__addition-btn" data-action="modal" data-open="#modal-form">Оставить заявку</button>
+        </div>
 			</div>
 		</div>
 	</div>
