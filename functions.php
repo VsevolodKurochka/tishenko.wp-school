@@ -83,7 +83,8 @@ class StarterSite extends TimberSite {
 	function generate_menu() {
 		
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Меню в шапке', 'visotskiy' ),
+			'menu-1' => esc_html__( 'Меню в шапке', 'school' ),
+			'menu-footer' => esc_html__( 'Меню в футере', 'school' ),
 		) );
 	}
 
@@ -111,6 +112,7 @@ class StarterSite extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['menu'] = new TimberMenu('menu-1');
+		$context['menu_footer'] = new TimberMenu('menu-footer');
 		$context['site'] = $this;
 
 		$context['options'] = get_fields('option');
