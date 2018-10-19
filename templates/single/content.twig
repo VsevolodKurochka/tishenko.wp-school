@@ -1,18 +1,31 @@
 <section class="section">
-	<div class="container">
-		<article class="article {{post.class}}" id="{{post.id}}">
-			{% if post.get_field('video') %}
-				<iframe src="https://www.youtube.com/embed/{{post.get_field('video')}}?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="article__video"></iframe>
-			{% else %}
-				<div class="article__content">
-					{{post.content}}
-				</div>
-			{% endif %}
-		</article>
-		{# PAGINATION - THESE CALL A CUSTOM FUNCTION IN FUNCTIONS.PHP TO CYCLE ONLY WITHIN OUR TAXONOMY TERM  #}    
-		<div class="row single-pagination">
-			<div class="col-6 single-pagination__prev">{{function('custom_prev_post',post.id)}}</div>
-			<div class="col-6 single-pagination__next">{{function('custom_next_post',post.id)}}</div>
-		</div> 
-	</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-8 col-md-9">
+        <article class="article {{post.class}}" id="{{post.id}}">
+          <div class="article__content">
+            {{post.content}}
+          </div>
+          <div class="article__footer">
+            <span class="post__date">{{post.date}}</span>
+          </div>
+          <div class="author">
+            <div class="author__header">
+              <img
+                class="author__image" 
+                src="{{post.author.get_field('avatar')|resize(90,90)}}" 
+                alt="{{post.author.first_name}} {{post.author.last_name}}">
+            </div>
+            <div class="author__body">
+              <p class="author__body-title">{{post.author.first_name}} {{post.author.last_name}}</p>
+              <p>Автор</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-sm-4 col-md-3">
+        {% include 'sidebar.twig' %}
+      </div>
+    </div>
+  </div>
 </section>

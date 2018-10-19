@@ -1,0 +1,56 @@
+.article
+	margin-bottom: 30px
+	ul,ol
+		margin-bottom: 15px
+
+	ul,
+	ol
+		padding-left: 30px
+		li
+			+offset('b', 15px)
+
+	ol
+		counter-reset: item
+		li
+			display: block
+			&:before
+				content: counter(item) ". "
+				counter-increment: item
+				+c($color-brand-2)
+				+fw(bold)
+
+	h1,h2,h3,h4,h5,h6
+		+my(45px, 15px)
+		color: $color-brand-1
+
+	blockquote
+		+r()
+		+my(40px)
+		+bgc(#e9fcff)
+		padding: 40px 15px
+		font-style: italic
+
+		&:after
+			content: ''
+			+a(30px, null, null, 0)
+			+size(28px, 56px)
+			+bgi('../img/icon-attachment.png')
+
+		+min(sm)
+			+px(40px, 90px)
+			&:after
+				left: 45px
+				top: 50%
+				transform: translateY(-50%)
+
+		+min(md)
+			padding-left: 120px
+
+	p:not(.author__body-title)
+		+offset('b', 15px)
+
+	img
+		height: auto
+
+	&__footer
+		+my(45px)
