@@ -1,0 +1,13 @@
+.date
+	+r()
+	+d(inline-block)
+	vertical-align: middle
+	+pl(30px)
+	+fs(14px)
+
+	&:before
+		content: ""
+		+a(50%, null, null, 0)
+		transform: translateY(-50%)
+		+size(22px, 27px)
+		+bgi('../img/icon-date.png')

@@ -1,6 +1,7 @@
 .statistics
 	+r()
-	+py(60px, 45px)
+	+mt(125px)
+	+py(100px, 45px)
 	+ta(center)
 	+blackout()
 	+c($color-white)
@@ -14,8 +15,12 @@
 		+py(175px, 75px)
 
 	&__person
-		+a(null, null, 70%)
+		+a(null, null, 85%)
 		z-index: 2
+		+max(sm)
+			max-width: 100px
+		+min(sm)
+			bottom: 70%
 		&_1
 			left: 0
 

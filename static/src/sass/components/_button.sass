@@ -2,9 +2,13 @@
 $btn-padding: 10px 16px
 $btn-font-size: 14px
 
-// Button large
-$btn-large-padding: 15px 35px
-$btn-large-font-size: 18px
+// Button size large
+$btn-large-padding: 12px 25px
+$btn-large-font-size: 16px
+
+// Button MD size large
+$btn-large-md-padding: 15px 35px
+$btn-large-md-font-size: 18px
 
 // Button border
 $btn-border-width: 2px
@@ -44,6 +48,8 @@ $btn-border-style: solid
 
 	&_lg
 		+btn-size($btn-large-padding, $btn-large-font-size)
+		+min(md)
+			+btn-size($btn-large-md-padding, $btn-large-md-font-size)
 
 	&_shadow
 		&-brand-1
