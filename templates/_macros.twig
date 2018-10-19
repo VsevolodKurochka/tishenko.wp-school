@@ -10,7 +10,7 @@
     </div>
   </header>
 {% endmacro %}
-{% macro post(class, post) %}
+{% macro post(class, post, options) %}
   <div class="post {{class}}">
     <div class="post__inner">
       <div class="post__header">
@@ -18,7 +18,14 @@
       </div>
       <div class="post__body">
         <a href="{{post.link}}" class="post__title">{{post.title}}</a>
-        <div class="post__preview">{{post.preview.read_more('').end('').length(20)}}</div>
+        <div class="post__preview">
+          {% if options.preview_length is null %}
+            {% set preview_length = 15 %}
+          {% else %}
+            {% set preview_length = options.preview_length %}
+          {% endif %}
+          {{post.preview.read_more('').end('').length(preview_length)}}
+        </div>
         <div class="post__footer">
           <a href="{{post.link}}" class="btn btn_brand-1 review__link">Читать статью</a>
         </div>
