@@ -1,5 +1,6 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{{post.content}}
+	{% include 'single/header.twig' %}
+  {% include 'page/content.twig' %}
 {% endblock %}

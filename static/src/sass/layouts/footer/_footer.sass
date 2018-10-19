@@ -1,2 +1,33 @@
 .footer
-	+fs(12px)
+	+py(15px)
+	+fs(0)
+	+bgc(#181818)
+
+	.custom-logo-link
+		display: block
+
+		img
+			width: auto
+			max-height: 30px
+	
+	&__row
+		+min(sm)
+			+ai(center)
+	
+	&__menu
+		li
+			display: block
+			+max(sm)
+				+offset('b', 15px)
+
+		+min(sm)
+			+ta(right)
+			li
+				display: inline-block
+				vertical-align: middle
+				+offset('r', 15px)
+		a
+			+c(#525252)
+			+fs(14px)
+			text-decoration: none
+			+fw(bold)
