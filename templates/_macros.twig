@@ -10,26 +10,20 @@
     </div>
 	</header>
 {% endmacro %}
-{% macro review(class, post) %}
-	<div class="review {{class}}">
-		<div class="review__header">
-			<p class="review__header-category">{{ post.terms('category') | join(', ') }}</p>
-			<h3 class="review__header-name">{{post.name}}</h3>
+{% macro post(class, post) %}
+	<div class="post {{class}}">
+		<div class="post__header">
+			<p class="post__header-category">{{ post.terms('category') | join(', ') }}</p>
+			<h3 class="post__header-title">{{post.title}}</h3>
 		</div>
-		<div class="review__content">
-			{% if post.get_field('video') %}
-				<a href="{{post.link}}" class="review__content-link">
-					<img src="{{post.thumbnail|resize(560,320)}}" alt="{{post.name}}" class="review__content-image">
-				</a>
-			{% else %}
-				<div class="review__content-info">
-					<img src="{{post.thumbnail|resize(126,126)}}" alt="{{post.name}}" class="review__content-info-image">
-					<div class="review__content-info-body">
-						<div class="review__content-info-body-excerpt">{{post.preview.read_more('').end('').length(20)}}</div>
-						<a href="{{post.link}}" class="review__content-info-body-link">Читать полностью</a>
-					</div>
-				</div>
-			{% endif %}
+		<div class="post__content">
+			<div class="post__content-info">
+        <img src="{{post.thumbnail|resize(126,126)}}" alt="{{post.name}}" class="post__content-info-image">
+        <div class="post__content-info-body">
+          <div class="post__content-info-body-excerpt">{{post.preview.read_more('').end('').length(20)}}</div>
+          <a href="{{post.link}}" class="review__content-info-body-link">Читать полностью</a>
+        </div>
+      </div>
 		</div>
 	</div>
 {% endmacro %}
