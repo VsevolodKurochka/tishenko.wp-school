@@ -5,7 +5,9 @@
 		{% set titleType = '1' %}
 	{% endif %}
 	<header class="header" style="background-image: url({{image}})">
-    <h{{titleType}} class="header__title title-md">{{title}}</h{{titleType}}>
+    <div class="container">
+      <h{{titleType}} class="header__title title-md">{{title}}</h{{titleType}}>
+    </div>
 	</header>
 {% endmacro %}
 {% macro review(class, post) %}
