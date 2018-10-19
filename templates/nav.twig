@@ -1,0 +1,19 @@
+<div class="fixed">
+	<div class="nav" id="js-navigation">
+		<div class="nav__container container">
+			<div class="nav__row row">
+				<div class="nav__logo col-12 col-md-2">
+					<button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger">
+						<span class="hamburger__lines"><span></span><span></span><span></span><span></span></span>
+					</button>
+					<div class="nav__logo-content">
+						{{function('get_custom_logo')}}
+					</div>
+				</div>
+				<nav class="nav__menu col-12 col-md-6" id="js-navigation-menu">
+					{% include "menu.twig" with {'menu': menu.get_items} %}
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
