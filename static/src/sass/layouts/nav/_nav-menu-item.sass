@@ -9,6 +9,7 @@
 		+c($color-white)
 		+fw(bold)
 		text-decoration: none
+		+tr()
 
 	+max(md)
 		+mb(10px)
@@ -24,5 +25,10 @@
 
 		a
 			+py(7px)
-			+fs(16px)
-			+linkEffect3()
+			+fs(14px)
+			//+linkEffect3($color-brand-4)
+
+
+		&.current-menu-item a,
+		a:hover
+			+c($color-brand-4)
