@@ -5,35 +5,16 @@
 		 
 		 // Defaults
 		 extract( shortcode_atts( array(
-				'posts_per_page' 	=> '2',
-				'category__in'		=> '',
-				'class'						=> 'col-12 col-sm-6',
-				'compare'					=> '',
-				'before'					=> ' class="row" '
+				'posts_per_page' 	=> '3',
+				'class'						=> 'col-12 col-sm-4',
+				'before'					=> 'class="row"'
 		 ), $atts ) );
 
-		 if($compare != ''){
-			 $lastposts = get_posts( array(
-					'posts_per_page'	=> $posts_per_page,
-					'post_type'				=> 'post',
-					'post_status'			=> 'publish',
-					'cat'		=> $category__in,
-					'meta_query' => array(
-							array(
-								'key'     		=> 'video',
-								'value'				=> '',
-								'compare' 		=> $compare 
-							)
-					)
-			 ) );
-			}else{
-				$lastposts = get_posts( array(
-					'posts_per_page'	=> $posts_per_page,
-					'post_type'				=> 'post',
-					'post_status'			=> 'publish',
-					'cat'		=> $category__in
-			 ) );
-			}
+		 	$lastposts = get_posts( array(
+				'posts_per_page'	=> $posts_per_page,
+				'post_type'				=> 'post',
+				'post_status'			=> 'publish'
+			));
 		 
 		 // Reset and setup variables
 		 $output = '';
@@ -42,24 +23,22 @@
 		 $output .= '<div '.$before.'>';
 			 foreach( $lastposts as $post ){ 
 				setup_postdata($post);
-				$temp_id 				= $post->ID;
-				$temp_category 	= get_the_category($temp_id);
-				$temp_title 		= get_the_title( $temp_id );
-				$temp_link 			= get_permalink( $temp_id );
-				$temp_image 		= get_the_post_thumbnail_url($temp_id);
-				$temp_video 		= get_field('video', $temp_id);
+				$temp_id 						= $post->ID;
+				$temp_category 			= get_the_category($temp_id);
+				$temp_title 				= get_the_title( $temp_id );
+				$temp_link 					= get_permalink( $temp_id );
+				$temp_thumbnails 		= get_the_post_thumbnail_url($temp_id);
 
-				$temp_excerpt 	= excerpt($temp_id, 20);
+				$temp_excerpt 			= excerpt($temp_id, 20);
 
 				$output .= Timber::compile( 
-					'partial/review.twig', 
+					'partial/post.twig', 
 					array( 
 						'title' 		=> $temp_title,
 						'link' 			=> $temp_link,
-						'image'			=> $temp_image,
+						'thumbnail'			=> $temp_thumbnails,
 						'excerpt'		=> $temp_excerpt,
 						'category'	=> $temp_category[0]->cat_name,
-						'video'			=> $temp_video,
 						'class'			=> $class
 					) 
 				);	
