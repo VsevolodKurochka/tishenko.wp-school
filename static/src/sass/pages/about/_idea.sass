@@ -1,4 +1,19 @@
 .about-idea
+	+r()
+	z-index: 1
+
+	&__letters
+		+a(30%, null, null, -50%)
+		+c(#b7b7b7)
+		opacity: 0.17
+		+mb(0)
+		transform: rotate(-90deg)
+		+ff('secondary')
+		+fs(150px)
+		z-index: -1
+		+min(md)
+			+fs(300px)
+
 	&__row
 		+offset('b', 45px)
 
