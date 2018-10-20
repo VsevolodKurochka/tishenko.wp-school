@@ -50,7 +50,7 @@ class vcNewProgramm extends WPBakeryShortCode {
 										),
 
 										array(
-											"type" => "textfield",
+											"type" => "textarea",
 											"holder" => "div",
 											"class" => "",
 											"heading" => __( "Заголовок", "school" ),
