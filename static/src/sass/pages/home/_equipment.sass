@@ -5,7 +5,7 @@
 	+c($color-white)
 	overflow: hidden
 	+min(sm)
-		+py(100px)
+		+py(100px, 0)
 
 	+min(md)
 		+py(150px, 0)
@@ -16,8 +16,11 @@
 		+c($color-white)
 		+mb(30px)
 		+min(sm)
+			+fs(2vmax)
+		+min(md)
 			+fs(1.5vmax)
 
 	&__boy
 		+r()
 		z-index: 2
+		+mb(0)
