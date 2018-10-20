@@ -49,6 +49,7 @@ $icon_html = false;
 $attributes = array();
 
 $colors = array(
+	'none'	=> '',
 	'blue' => '#5472d2',
 	'turquoise' => '#00c1cf',
 	'pink' => '#fe6c61',
@@ -91,11 +92,13 @@ $wrapper_classes = array(
 
 $button_classes = array(
 	'btn',
-	'vc_general',
-	'vc_btn3',
-	'vc_btn3-size-' . $size,
-	'vc_btn3-shape-' . $shape,
-	'vc_btn3-style-' . $style,
+	'btn_brand-1',
+	'btn_lg'
+	// 'vc_general',
+	// 'vc_btn3',
+	// 'vc_btn3-size-' . $size,
+	// 'vc_btn3-shape-' . $shape,
+	// 'vc_btn3-style-' . $style,
 );
 
 $button_html = $title;
