@@ -20,9 +20,15 @@
 		+px(15px)
 
 		+min(sm)
-			min-height: 150px
+			min-height: 120px
 			+d(flex)
 			+jc(center)
 
 		+min(md)
 			+px(25px)
+			min-height: 150px
+
+	&-column
+		+min(sm)
+			+max(md)
+				+offset('b', 60px)
