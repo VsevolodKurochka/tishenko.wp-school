@@ -1,6 +1,6 @@
 .home-equipment
 	+r()
-	+py(60px)
+	+py(60px, 0)
 	+blackout()
 	+c($color-white)
 	overflow: hidden
@@ -24,3 +24,8 @@
 		+r()
 		z-index: 2
 		+mb(0)
+
+		+max(sm)
+			+mt(30px)
+			img
+				max-width: 200px
