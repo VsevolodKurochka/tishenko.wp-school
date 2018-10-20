@@ -5,9 +5,24 @@
 	+c($color-brand-3)
 
 	&__header
-		+mt(-50px)
+		+r(-40px)
 
 	&__title
-		+fs(15px)
+		+fs(14px)
 		+ff('secondary')
 		+px(25px)
+
+		+min(sm)
+			min-height: 60px
+
+	&__content
+		+fs(14px)
+		+px(15px)
+
+		+min(sm)
+			min-height: 150px
+			+d(flex)
+			+jc(center)
+
+		+min(md)
+			+px(25px)

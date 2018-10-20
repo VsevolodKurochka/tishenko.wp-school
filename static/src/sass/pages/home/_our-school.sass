@@ -3,12 +3,34 @@
 	+py(60px)
 	+blackout()
 	+c($color-white)
+	overflow: hidden
+
+	&:after
+		content: ""
+		+a(null, null, -50px, 0)
+		+size(100%, 400px)
+		+bgi('../img/wave.png')
+		transform: scaleX(-1)
+		opacity: 0.5
+		z-index: -1
 
 	+min(sm)
 		+py(100px)
 
 	+min(md)
-		+py(150px)
+		+py(150px, 100px)
 
 	&__title
 		+ta(center)
+
+	&__footer
+		+fs(20px)
+		+fw(bold)
+
+		+min(sm)
+			+fs(1.375vmax)
+			+mt(275px)
+
+	&__person
+		+a(null, 0, -15%)
+		z-index: 2
