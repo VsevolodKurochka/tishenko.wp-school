@@ -44,5 +44,14 @@
 	  }
 	}
 
+	function cmb2_sanitize_text_callback( $override_value, $value ) {
+    //convert square brackets to angle brackets
+    $value = str_replace('[', '<', $value);
+    $value = str_replace(']', '>', $value);
+    return $value;
+	}
+	add_filter( 'cmb2_sanitize_text', 'cmb2_sanitize_text_callback', 10, 2 );
+
+
 
 ?>

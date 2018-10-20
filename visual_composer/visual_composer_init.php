@@ -14,6 +14,7 @@ function vc_before_init_actions() {
 	require_once( get_template_directory().'/visual_composer/vc-elements/vc_new_card.php' );
 	require_once( get_template_directory().'/visual_composer/vc-elements/vc_review_type_video.php' );
 	require_once( get_template_directory().'/visual_composer/vc-elements/vc_programm.php' );
+	require_once( get_template_directory().'/visual_composer/vc-elements/vc_master_class.php' );
 	
 }
 

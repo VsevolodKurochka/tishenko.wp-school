@@ -23,7 +23,7 @@ class vcNewMasterClass extends WPBakeryShortCode {
 				// Map the block with vc_map()
 				vc_map( 
 						array(
-								'name' => __('Программа', 'school'),
+								'name' => __('Мастер-класс', 'school'),
 								'base' => 'vc_master_class',
 								'description' => __('', 'school'), 
 								'category' => __('Для работы с сайтом', 'school'),         
@@ -127,14 +127,15 @@ class vcNewMasterClass extends WPBakeryShortCode {
 				<div class="master-class">
 					<div class="master-class__header">
 						<p class="master-class__header-title">'.$title.'</p>
+						<p class="master-class__header-subtitle">'.$subtitle.'</p>
 					</div>
 					<div class="master-class__body">
 						<img src="'.$image_url.'" alt="'.$title.'" class="master-class__body-image">
 					</div>
 					<div class="master-class__excerpt">'.$excerpt.'</div>
 					<div class="master-class__footer">
-						<a href="'.site_url($btn_href["url"]).'" class="btn btn_brand-1 btn_lg master-class__button" target="_blank">подробнее</a>
-						<div class="master-class__price">'.$status.'</div>
+						<a href="'.site_url($btn_href["url"]).'" class="btn btn_brand-1 btn_lg master-class__button" target="_blank">ПОДРОБНЕЕ</a>
+						<div class="master-class__price">'.$price.'</div>
 					</div>
 				</div>';
 
