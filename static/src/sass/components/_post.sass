@@ -33,8 +33,10 @@
 
 	&__link
 		vertical-align: middle
-		+mr(30px)
 
 	&__date
 		+max(sm)
 			display: none
+
+	&__link + &__date
+		+ml(30px)
