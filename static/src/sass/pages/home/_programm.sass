@@ -17,7 +17,19 @@
 		z-index: 2
 
 		+min(sm)
+			+mt(-150px)
+
+		+min(md)
 			+mt(-350px)
+
+		img
+			max-width: 200px
+
+			+min(sm)
+				max-width: 250px
+
+			+min(md)
+				max-width: none
 
 	&__title
 		+c($color-white)
