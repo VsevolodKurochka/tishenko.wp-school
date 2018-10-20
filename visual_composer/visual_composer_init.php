@@ -8,9 +8,10 @@ function vc_before_init_actions() {
 	// Require new custom Element
 	require_once( get_template_directory().'/visual_composer/vc-elements/vc_new_title.php' ); 
 
-	require_once( get_template_directory().'/visual_composer/vc-elements/vc_review_type_1.php' );
+	//require_once( get_template_directory().'/visual_composer/vc-elements/vc_review_type_1.php' );
 	require_once( get_template_directory().'/visual_composer/vc-elements/vc_new_icon.php' );
 	require_once( get_template_directory().'/visual_composer/vc-elements/vc_new_card.php' );
+	require_once( get_template_directory().'/visual_composer/vc-elements/vc_review_type_video.php' );
 }
 
 
