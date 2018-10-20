@@ -1,0 +1,59 @@
+.programm
+	padding: 30px
+	+bgc($color-brand-3)
+	border-radius: 6px
+	box-shadow: 0px 17px 24px 0px rgba(0, 0, 0, 0.25)
+	+c($color-white)
+
+	+min(md)
+		padding: 45px
+
+	&__header
+		+d(flex)
+		+ai(center)
+		+mb(15px)
+
+		&-icon
+			+w(45px)
+			+mr(15px)
+
+			+min(md)
+				+w(90px)
+
+		&-title
+			+ff('secondary')
+			text-transform: uppercase
+			+fs(19px)
+
+			+min(md)
+				+fs(21px)
+
+	&__body
+		border-radius: 6px
+		+bgc(transparentize($color-black, 0.8))
+		padding: 15px
+		+mb(30px)
+
+		+min(sm)
+			+d(flex)
+			+jc(space-between)
+			+ai(center)
+
+	&__info
+		padding: 5px 10px
+		+bgc($color-brand-5)
+		+fw(bold)
+		text-transform: uppercase
+		border-radius: 6px
+
+		sub,
+		sup
+			+fs(70%)
+
+	&__content
+		+ta(center)
+		+mb(45px)
+		+fs(16px)
+
+	&__footer
+		text-align: center

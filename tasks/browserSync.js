@@ -24,7 +24,8 @@ export function serve(done) {
 
 	server.init({
 		proxy: 'tishenko.school',
-		notify: false
+		notify: false,
+		tunnel: "tishenko"
 	});
 
 	done();
