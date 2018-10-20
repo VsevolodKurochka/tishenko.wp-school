@@ -63,6 +63,31 @@ class StarterSite extends TimberSite {
 
 	function register_post_types() {
 		//this is where you can register custom post types
+		register_post_type('master-classes', array(
+			'label'  => null,
+			'labels' => array(
+				'name'               => 'Мастер классы', // основное название для типа записи
+				'singular_name'      => 'Мастер классы', // название для одной записи этого типа
+				'add_new'            => 'Добавить мастер класс', // для добавления новой записи
+				'add_new_item'       => 'Добавление мастер класса', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Редактирование мастер класса', // для редактирования типа записи
+				'new_item'           => 'Новый мастер класс', // текст новой записи
+				'view_item'          => 'Смотреть мастер класс', // для просмотра записи этого типа.
+				'search_items'       => 'Искать мастер класс', // для поиска по этим типам записи
+				'not_found'          => 'Не найдено мастер классов', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+				'parent_item_colon'  => '', // для родителей (у древовидных типов)
+				'menu_name'          => 'Мастер классы', // название меню
+			),
+			'description'         => '',
+			'public'              => true,
+			'hierarchical'        => false,
+			'supports'            => array('title'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+			'taxonomies'          => array(),
+			'has_archive'         => true,
+			'rewrite'             => true,
+			'query_var'           => true
+		) );
 	}
 
 	function register_taxonomies() {
