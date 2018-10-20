@@ -1,18 +1,21 @@
 .home-our-school
 	+r()
-	+py(60px)
+	+py(60px, 20px)
 	+blackout()
 	+c($color-white)
 	overflow: hidden
 
 	&:after
 		content: ""
-		+a(null, null, -50px, 0)
+		+a(null, null, -100px, 0)
 		+size(100%, 350px)
 		+bgi('../img/wave.png')
 		transform: scaleX(-1)
 		opacity: 0.5
 		z-index: -1
+
+		+min(sm)
+			bottom: -50px
 
 		+min(md)
 			+h(400px)
@@ -28,10 +31,12 @@
 		+c($color-white)
 
 	&__footer
-		+fs(20px)
+		+mt(75px)
+		+fs(15px)
 		+fw(bold)
 
 		+min(sm)
+			+fs(20px)
 			+mt(130px)
 
 		+min(md)
@@ -41,6 +46,9 @@
 	&__person
 		+a(null, 0, -10%)
 		z-index: 2
+
+		+max(sm)
+			display: none
 
 		+min(sm)
 			max-width: 180px
