@@ -1,0 +1,31 @@
+.home-greeting
+	+mt(0)
+	&__buttons .wpb_wrapper
+		+min(sm)
+			+d(flex)
+			+jc(center)
+
+			> div
+				+offset('r', 30px)
+
+	.btn
+		+ta(left)
+		+min(sm)
+			max-width: 270px
+
+	a,button
+		+pl(60px)
+		&:before
+			content: ""
+			+a(50%, null, null, 15px)
+			transform: translateY(-50%)
+
+	a
+		&:before
+			+size(29px, 8px)
+			+bgi('../img/icon-elipse.png')
+
+	button
+		&:before
+			+size(20px, 23px)
+			+bgi('../img/icon-play.png')
