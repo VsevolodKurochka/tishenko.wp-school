@@ -1,6 +1,16 @@
 .photo-mask
 	+r()
+	overflow: hidden
+
+	&__under
+		+size(100%)
+		object-fit: cover
+		+tr()
 
 	&__cover
 		+a(0, 0)
 		+size(100%)
+
+	&:hover &
+		&__under
+			transform: scale(1.1)

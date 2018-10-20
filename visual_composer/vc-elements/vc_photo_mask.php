@@ -31,7 +31,7 @@ class vcPhotoMask extends WPBakeryShortCode {
 
 										array(
 											"type" => "textfield",
-											"holder" => "div",
+											"holder" => "",
 											"class" => "",
 											"heading" => __( "Дополнительный класс", "school" ),
 											"param_name" => "photo_mask_class",
@@ -53,7 +53,7 @@ class vcPhotoMask extends WPBakeryShortCode {
 
 										array(
 											'type' => 'attach_image',
-											'holder' => 'img',
+											'holder' => '',
 											'class' => 'title-class',
 											'heading' => __( 'Выберите маску', 'school' ),
 											'param_name' => 'image_mask',
