@@ -1,34 +1,96 @@
-.nav__menu-item
-	+d(block)
+.nav__menu
+	// +r()
+	// +d(block)
 
-	+tr()
+	// +tr()
 
-	a
-		+d(block)
+	// a
+	// 	+d(block)
+	// 	+r()
+	// 	+c($color-white)
+	// 	+fw(bold)
+	// 	text-decoration: none
+	// 	+tr()
+
+	// +max(md)
+	// 	+mb(10px)
+
+	// 	a
+	// 		py10px 15px
+
+
+	// +min(md)
+	// 	+d(inline-block)
+	// 	vertical-align: middle
+	// 	+offset('r', 15px)
+
+	// 	a
+	// 		+py(7px)
+	// 		+fs(14px)
+	// 		//+linkEffect3($color-brand-4)
+
+
+	// 	&.current-menu-item a,
+	// 	a:hover
+	// 		+c($color-brand-4)
+	li
 		+r()
-		+c($color-white)
-		+fw(bold)
-		text-decoration: none
-		+tr()
-
-	+max(md)
-		+mb(10px)
 
 		a
-			padding: 10px 15px
+			+tr()
+			text-decoration: none
+			+fs(16px)
 
+		> ul
+			+r()
 
-	+min(md)
-		+d(inline-block)
-		vertical-align: middle
-		+offset('r', 15px)
+			+max(md)
+				padding-left: 30px
+				a
+					font-size: 12px
+					padding: 5px
 
-		a
-			+py(7px)
-			+fs(14px)
-			//+linkEffect3($color-brand-4)
+			+min(md)
 
+				+a(45px, null, null, 0)
+				opacity: 0
+				min-width: 200px
+				visibility: hidden
+				box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1)
+				+tr()
 
-		&.current-menu-item a,
-		a:hover
-			+c($color-brand-4)
+				li
+					display: block
+					text-align: left
+
+				a
+					display: block
+					padding: 10px
+					color: $color-black
+					background-color: $color-white
+
+				a:hover,
+				li.current-menu-item a
+					color: $color-white
+					background-color: $color-brand-4
+
+		&:hover > ul
+			opacity: 1
+			visibility: visible
+
+	> ul 
+		> li
+			+min(md)
+				display: inline-block
+				vertical-align: middle
+				+py(10px)
+
+				&:not(:last-child)
+					margin-right: 10px
+
+				> a,
+					color: $color-white
+
+				> a:hover,
+				&.current-menu-item a
+					color: $color-brand-4
