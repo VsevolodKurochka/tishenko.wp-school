@@ -1,8 +1,16 @@
 .home-greeting
 	+mt(0)
+
+	+min(sm)
+		+mb(140px)
+
+	.container
+		z-index: 3
+
 	.header__title
 		+max(sm)
 			+fs(15px)
+
 	&__buttons .wpb_wrapper
 		+min(sm)
 			+d(flex)
@@ -37,3 +45,12 @@
 			left: 25px
 			+size(20px, 23px)
 			+bgi('../img/icon-play.png')
+
+	&__spot
+		+a(null, 0%, -15%)
+		z-index: 2
+		max-width: 200px
+
+		+min(md)
+			max-width: none
+			bottom: -25%
