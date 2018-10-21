@@ -130,7 +130,7 @@ class vcNewMasterClass extends WPBakeryShortCode {
 						<p class="master-class__header-subtitle">'.$subtitle.'</p>
 					</div>
 					<div class="master-class__body">
-						<img src="'.$image_url.'" alt="'.$title.'" class="master-class__body-image">
+						<a href="'.site_url($btn_href["url"]).'" target="_blank"><img src="'.$image_url.'" alt="'.$title.'" class="master-class__body-image"></a>
 					</div>
 					<div class="master-class__excerpt">'.$excerpt.'</div>
 					<div class="master-class__footer">
