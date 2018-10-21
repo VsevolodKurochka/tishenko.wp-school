@@ -83,7 +83,7 @@ class StarterSite extends TimberSite {
 			'public'              => true,
 			'hierarchical'        => false,
 			'supports'            => array('title', 'thumbnail', 'editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-			'taxonomies'          => array('categories-master-classes'),
+			'taxonomies'          => array('master-classes'),
 			'has_archive'         => true,
 			'rewrite'             => true,
 			'query_var'           => true
@@ -92,40 +92,27 @@ class StarterSite extends TimberSite {
 
 	function register_taxonomies() {
 		//this is where you can register custom taxonomies
-		register_taxonomy('categories-master-classes', array('master-classes'), array(
+		register_taxonomy('master_classes', array('master-classes'), array(
 			'label'                 => '', // определяется параметром $labels->name
 			'labels'                => array(
-				'name'              => 'Категории',
-				'singular_name'     => 'Категории',
-				'search_items'      => 'Искать Категории',
-				'all_items'         => 'Все Категории',
-				'view_item '        => 'Смотреть Категория',
-				'parent_item'       => 'Родительская Категория',
-				'parent_item_colon' => 'Родительская Категория:',
-				'edit_item'         => 'Редактировать Категорию',
-				'update_item'       => 'Обновить Категория',
-				'add_new_item'      => 'Добавить категорию',
-				'new_item_name'     => 'Добавить новую категорию',
+				'name'              => 'Категории мастер-классов',
+				'singular_name'     => 'Категории мастер-классов',
+				'search_items'      => 'Искать категории мастер-классов',
+				'all_items'         => 'Все категории мастер-классов',
+				'view_item '        => 'Смотреть категорию мастер-классов',
+				'parent_item'       => 'Родительская категория мастер-классов',
+				'parent_item_colon' => 'Родительская категория мастер-классов:',
+				'edit_item'         => 'Редактировать категорию мастер-классов',
+				'update_item'       => 'Обновить категория мастер-классов',
+				'add_new_item'      => 'Добавить категорию мастер-классов',
+				'new_item_name'     => 'Добавить новую категорию мастер-классов',
 				'menu_name'         => 'Категории мастер-классов',
 			),
 			'description'           => 'Категории для мастер-классов', // описание таксономии
 			'public'                => true,
-			'publicly_queryable'    => null, // равен аргументу public
-			'show_in_nav_menus'     => true, // равен аргументу public
-			'show_ui'               => true, // равен аргументу public
-			'show_in_menu'          => true, // равен аргументу show_ui
-			'show_tagcloud'         => true, // равен аргументу show_ui
-			'show_in_rest'          => null, // добавить в REST API
-			'rest_base'             => null, // $taxonomy
 			'hierarchical'          => false,
-			'update_count_callback' => '',
-			'rewrite' => array( 'slug' => 'master-classes' ),
-			//'query_var'             => $taxonomy, // название параметра запроса
-			'capabilities'          => array(),
-			'meta_box_cb'           => null, // callback функция. Отвечает за html код метабокса (с версии 3.8): post_categories_meta_box или post_tags_meta_box. Если указать false, то метабокс будет отключен вообще
-			'show_admin_column'     => false, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
-			'_builtin'              => false,
-			'show_in_quick_edit'    => null, // по умолчанию значение show_ui
+			'rewrite' 							=> true,
+			'query_var' => true,
 		) );
 	}
 

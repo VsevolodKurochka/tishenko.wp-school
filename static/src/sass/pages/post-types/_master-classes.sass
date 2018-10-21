@@ -1,0 +1,31 @@
+.post-type-archive-master-classes
+	&__nav
+		+ta(center)
+		+mb(30px)
+
+		+min(sm)
+			+mb(4vmax)
+
+		ul
+			list-style: none
+		li
+			+d(inline-block)
+			vertical-align: middle
+			+offset('r', 15px)
+
+		a
+			text-transform: uppercase
+			text-decoration: none
+			+c(#747474)
+			+tr()
+			+fw(bold)
+
+			&.active,
+			&:hover
+				+c(#00ae9a)
+
+			+min(sm)
+				+fs(24px)
+
+			+min(md)
+				+fs(30px)
