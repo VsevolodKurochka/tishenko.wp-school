@@ -1,0 +1,30 @@
+<section class="section">
+  <div class="container">
+    <div class="post-type-archive__nav">
+      <p class="post-type-archive__nav-title">категории мастер-классов</p>
+      <ul>
+        {% for term in terms %}
+          <li><a href="{{function('get_term_link', term)}}">{{term.name}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="post-type-archive__row row">
+      {% for post in posts %}
+        {% set image = post.get_field('photo') ? post.get_field('photo') : post.thumbnail %}
+        {% set price = (post.get_field('status') == "Платно") ? post.get_field('price') : "Бесплатно" %}
+        <div class="col-12 col-sm-6">
+          {%
+            include 'partial/master-class.twig' with {
+              'title': post.title,
+              'subtitle': post.terms('categories-master-classes')|join(', '),
+              'image': image|resize(465,250),
+              'excerpt': post.post_content|excerpt(10),
+              'price': price,
+              'url': post.link
+            }
+          %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

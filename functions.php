@@ -119,7 +119,7 @@ class StarterSite extends TimberSite {
 			'rest_base'             => null, // $taxonomy
 			'hierarchical'          => false,
 			'update_count_callback' => '',
-			'rewrite'               => true,
+			'rewrite' => array( 'slug' => 'master-classes' ),
 			//'query_var'             => $taxonomy, // название параметра запроса
 			'capabilities'          => array(),
 			'meta_box_cb'           => null, // callback функция. Отвечает за html код метабокса (с версии 3.8): post_categories_meta_box или post_tags_meta_box. Если указать false, то метабокс будет отключен вообще

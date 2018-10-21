@@ -38,6 +38,13 @@ if ( is_day() ) {
 
 //$context['background'] = get_template_directory_uri() . '/static/build/img/bg-food-' . rand(1, 3) . '.jpg';
 
+$context['terms'] = get_terms( array(
+	'taxonomy' => 'categories-master-classes',
+	'hide_empty' => true,
+));
+print_r($context['terms']);
+
+
 $context['posts'] = new Timber\PostQuery();
 
 Timber::render( $templates, $context );
