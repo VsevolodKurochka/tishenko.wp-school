@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container">
+    <div class="single-master-classes__header">
+      {% if post.get_field('video_or_photo') == 'Видео' %}
+        <iframe src="https://www.youtube.com/embed/{{post.get_field('video')}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      {% else %}
+        <img src="{{post.get_field('photo')}}" alt="{{post.title}}">
+      {% endif %}
+    </div>
+    <div class="single-master-classes__text">{{post.content}}</div>
+    <div class="single-master-classes__body">
+      {% if post.get_field('status') == 'Платно' %}
+        {% set btn_text = "купить мастер-класс" %}
+        <a href="{{post.get_field('link')}}" class="btn btn_lg btn_brand-1">{{btn_text}}</a>
+        <span class="single-master-classes__body-connect">за</span>
+        <span class="single-master-classes__body-price">{{post.get_field('price')}} <sup>грн</sup></span>
+      {% else %}
+        {% set btn_text = "получить мастер-класс бесплатно" %}
+        <a href="{{post.get_field('link')}}" class="btn btn_lg btn_brand-1">{{btn_text}}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

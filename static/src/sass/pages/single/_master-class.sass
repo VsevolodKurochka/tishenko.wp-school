@@ -1,0 +1,56 @@
+.single-master-classes
+	&__header
+		+mb(30px)
+		+min(md)
+			max-width: 70%
+			+mx(auto)
+			+mb(45px)
+
+		iframe
+			+size(100%, 150px)
+
+			+min(sm)
+				+h(300px)
+
+			+min(md)
+				+h(450px)
+
+	&__text
+		+mb(45px)
+		+min(md)
+			+ta(center)
+			max-width: 80%
+			+mx(auto)
+
+	&__body
+		+r()
+		+blackout()
+		+ta(center)
+		border-radius: 6px
+		padding: 30px
+		+bgc($color-brand-5)
+		+c($color-white)
+
+		&:before
+			background-size: cover
+			border-radius: 6px
+		+min(md)
+			+d(flex)
+			+ai(center)
+			+jc(space-between)
+			padding: 45px
+			+mx(auto)
+			max-width: 60%
+
+		span
+			+ff('secondary')
+
+		&-connect
+			+fs(14px)
+
+		&-price
+			+fs(30px)
+
+			sup
+				+fs(50%)
+				vertical-align: top
