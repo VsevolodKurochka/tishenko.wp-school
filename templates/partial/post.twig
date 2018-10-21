@@ -7,7 +7,11 @@
       <a href="{{link}}" class="post__title">{{title}}</a>
       <div class="post__preview">
         {% set preview_length = (preview_length is null) ? 15 : preview_length %}
-        {{preview.read_more('').end('...').length(preview_length)}}
+        {% if preview_without_formatting %}
+          {{preview}}
+        {% else %}
+          {{ preview.read_more('').end('...').length(preview_length) }}
+        {% endif %}
       </div>
       <div class="post__footer">
         <a href="{{link}}" class="btn btn_lg btn_border-brand-2 post__link effect effect_bounce-top">Читать статью</a>

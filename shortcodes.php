@@ -24,17 +24,16 @@
 			 foreach( $lastposts as $post ){ 
 				setup_postdata($post);
 				$temp_id 						= $post->ID;
-				$temp_category 			= get_the_category($temp_id);
 
 				$output .= Timber::compile( 
 					'partial/post.twig', 
 					array( 
-						'title' 				=> get_the_title( $temp_id ),
-						'link' 					=> get_permalink( $temp_id ),
-						'thumbnail'			=> get_the_post_thumbnail_url($temp_id),
-						'excerpt'				=> excerpt($temp_id, 20),
-						'category'			=> $temp_category[0]->cat_name,
-						'class'					=> $class
+						'title' 												=> get_the_title( $temp_id ),
+						'link' 													=> get_permalink( $temp_id ),
+						'thumbnail'											=> get_the_post_thumbnail_url($temp_id),
+						'preview_without_formatting'		=> true,
+						'preview'												=> custom_get_excerpt($temp_id, 15),
+						'class'													=> $class
 					) 
 				);
 			 }

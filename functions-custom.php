@@ -2,7 +2,7 @@
 
 	show_admin_bar(false);
 
-	function excerpt($id, $limit) {
+	function custom_get_excerpt($id, $limit) {
 		$excerpt = explode(' ', get_the_excerpt($id), $limit);
 
 		if (count($excerpt) >= $limit) {
