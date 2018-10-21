@@ -123,22 +123,6 @@ class vcNewMasterClass extends WPBakeryShortCode {
 
 				$btn_href 	= vc_build_link($btn_link);
 
-				// $html = '
-				// <div class="master-class">
-				// 	<div class="master-class__header">
-				// 		<p class="master-class__header-title">'.$title.'</p>
-				// 		<p class="master-class__header-subtitle">'.$subtitle.'</p>
-				// 	</div>
-				// 	<div class="master-class__body">
-				// 		<a href="'.site_url($btn_href["url"]).'" target="_blank"><img src="'.$image_url.'" alt="'.$title.'" class="master-class__body-image"></a>
-				// 	</div>
-				// 	<div class="master-class__excerpt">'.$excerpt.'</div>
-				// 	<div class="master-class__footer">
-				// 		<a href="'.site_url($btn_href["url"]).'" class="btn btn_brand-1 btn_lg master-class__button" target="_blank">ПОДРОБНЕЕ</a>
-				// 		<div class="master-class__price">'.$price.'</div>
-				// 	</div>
-				// </div>';
-
 				$html = Timber::compile( 
 					'partial/master-class.twig', 
 					array(
