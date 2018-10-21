@@ -25,7 +25,7 @@
               
               {% if i == 1 %}
                 {%
-                  include 'partial/post-1.twig' with {
+                  include 'partial/post.twig' with {
                     'class': 'post_large col-12',
                     'title': post.title,
                     'thumbnail': post.thumbnail,
@@ -37,7 +37,7 @@
                 %}
               {% else %}
                 {%
-                  include 'partial/post-1.twig' with {
+                  include 'partial/post.twig' with {
                     'class': 'post_small col-sm-6',
                     'title': post.title,
                     'thumbnail': post.thumbnail,

@@ -6,7 +6,7 @@
 		 // Defaults
 		 extract( shortcode_atts( array(
 				'posts_per_page' 	=> '3',
-				'class'						=> 'col-12 col-sm-4',
+				'class'						=> 'post_small col-12 col-sm-4',
 				'before'					=> 'class="row"'
 		 ), $atts ) );
 
@@ -25,21 +25,16 @@
 				setup_postdata($post);
 				$temp_id 						= $post->ID;
 				$temp_category 			= get_the_category($temp_id);
-				$temp_title 				= get_the_title( $temp_id );
-				$temp_link 					= get_permalink( $temp_id );
-				$temp_thumbnails 		= get_the_post_thumbnail_url($temp_id);
-
-				$temp_excerpt 			= excerpt($temp_id, 20);
 
 				$output .= Timber::compile( 
 					'partial/post.twig', 
 					array( 
-						'title' 		=> $temp_title,
-						'link' 			=> $temp_link,
-						'thumbnail'			=> $temp_thumbnails,
-						'excerpt'		=> $temp_excerpt,
-						'category'	=> $temp_category[0]->cat_name,
-						'class'			=> $class
+						'title' 				=> get_the_title( $temp_id ),
+						'link' 					=> get_permalink( $temp_id ),
+						'thumbnail'			=> get_the_post_thumbnail_url($temp_id),
+						'excerpt'				=> excerpt($temp_id, 20),
+						'category'			=> $temp_category[0]->cat_name,
+						'class'					=> $class
 					) 
 				);
 			 }
