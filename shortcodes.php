@@ -41,7 +41,7 @@
 						'category'	=> $temp_category[0]->cat_name,
 						'class'			=> $class
 					) 
-				);	
+				);
 			 }
 		 $output .= '</div>';
 		 return $output;
