@@ -1,4 +1,5 @@
 .home-greeting
+	overflow: hidden
 	+mt(0)
 
 	+min(sm)
@@ -47,13 +48,16 @@
 			+bgi('../img/icon-play.png')
 
 	&__spot
-		+a(null, 0%, -15%)
-		z-index: 2
-		max-width: 200px
+		+a(0, null, null, 0)
+		+size(100%)
+		img
+			+a(null, 0%, -15%)
+			z-index: 2
+			max-width: 200px
 
-		+min(md)
-			max-width: none
-			bottom: -25%
+			+min(md)
+				max-width: none
+				bottom: -25%
 
 	&__video
 		+a(0, 0)

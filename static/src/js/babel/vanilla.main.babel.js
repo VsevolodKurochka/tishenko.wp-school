@@ -227,7 +227,13 @@
 			document.body.style.cursor = 'pointer';
 		}
 
-		console.log('vanilla');
+		if(document.body.clientWidth > 1025){
+
+			var scenes = document.getElementsByClassName('scene');
+			for(var i = 0; i < scenes.length; i++){
+			 new Parallax(scenes[i]);
+			}
+		}
 
 	});
 }());
