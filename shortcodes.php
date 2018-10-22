@@ -41,5 +41,27 @@
 		 return $output;
 		 wp_reset_postdata();
 	}
+
+
+	add_shortcode('custom_video', 'custom_video_shortcode');
+	function custom_video_shortcode($atts){
+
+		// Defaults
+		extract( shortcode_atts( array(
+			'class'						=> '',
+			'src'							=> ''
+		), $atts ) );
+
+		$output = Timber::compile( 
+			'partial/video.twig', 
+			array(
+				'class'	=> $class,
+				'src'		=> $src
+			)
+		);
+
+		return $output;
+
+	}
 		 
 ?>

@@ -1,4 +1,4 @@
-=blackout()
+=blackout($opacity: 0.9)
 	z-index: 1
 	background-size: cover
 	+min(lg)
@@ -8,6 +8,7 @@
 		content: ""
 		+a(0,0)
 		+size(100%)
-		+bgi('../img/bg-part.jpg', 0 0, repeat, unset)
-		opacity: 0.9
+		+bgc($color-brand-5)
+		//+bgi('../img/bg-part.jpg', 0 0, repeat, unset)
+		opacity: $opacity
 		z-index: -1
