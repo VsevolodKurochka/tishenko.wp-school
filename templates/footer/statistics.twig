@@ -8,7 +8,12 @@
   {% set person_class = "statistics__person_1" %}
 {% endif %}
 <section class="statistics wave_top" style="background-image: url({{image}})">
-  <img src="{{person}}" alt="{{options.footer_title}}" class="statistics__person {{person_class}}">
+  <div class="scene statistics__person-scene">
+    <div data-depth="0.2" class="statistics__person-cover"><img src="{{person}}" alt="{{options.footer_title}}" class="statistics__person {{person_class}}"></div>
+  </div>
+  <div class="scene">
+    <div data-depth="0.4" class="bg-stars"></div>
+  </div>
   <div class="container">
     <p class="statistics__subtitle title-sm">{{options.footer_subtitle}}</p>
     <p class="statistics__title title-md">{{options.footer_title}}</p>
