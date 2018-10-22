@@ -54,6 +54,9 @@ class StarterSite extends TimberSite {
 		add_action( 'wp_footer', array( $this, 'register_scripts' ) );
 		add_filter('upload_mimes', array($this, 'cc_mime_types'), 1, 1);
 
+		//add_action( 'after_setup_theme', array($this, 'mytheme_add_woocommerce_support') );
+
+
 		$this->add_options_page();
 		$this->generate_menu();
 
@@ -144,6 +147,10 @@ class StarterSite extends TimberSite {
 			'before_title' => '<p class="sidebar__title">',
 			'after_title' => '</p>',
 		));
+	}
+
+	function mytheme_add_woocommerce_support() {
+		add_theme_support( 'woocommerce' );
 	}
 
 	function add_options_page() {
