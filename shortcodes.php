@@ -43,8 +43,8 @@
 	}
 
 
-	add_shortcode('custom_video', 'custom_video_shortcode');
-	function custom_video_shortcode($atts){
+	add_shortcode('custom_image', 'custom_image_shortcode');
+	function custom_image_shortcode($atts){
 
 		// Defaults
 		extract( shortcode_atts( array(
@@ -53,10 +53,12 @@
 		), $atts ) );
 
 		$output = Timber::compile( 
-			'partial/video.twig', 
+			'partial/image.twig', 
 			array(
-				'class'	=> $class,
-				'src'		=> $src
+				'class'			=> $class,
+				'site_url'	=> get_site_url(),
+				'site_name' => get_bloginfo('name'),
+				'src'				=> $src
 			)
 		);
 
