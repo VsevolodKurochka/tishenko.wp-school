@@ -100,7 +100,7 @@ class vcInfoBox extends WPBakeryShortCode {
 				$html = '<div class="section__header">';
 					$html .= '<h'.$title_status.' class="section__title '.$title_class.'">' . $title . '</h'.$title_status.'>';
 					if(isset($subtitle) && $subtitle != ""){
-						$html .= '<p'.$subtitle_status.' class="section__subtitle '.$subtitle_class.'">' . $subtitle . '</h'.$subtitle_status.'>';
+						$html .= '<p class="section__subtitle '.$subtitle_class.'">' . $subtitle . '</p>';
 					}
 				$html .= '</div>';
 				 

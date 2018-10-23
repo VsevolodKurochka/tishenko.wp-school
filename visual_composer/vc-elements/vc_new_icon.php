@@ -74,11 +74,10 @@ class vcNewIcon extends WPBakeryShortCode {
 				// Fill $html var with data
 				$img = wp_get_attachment_image_url($image_url, 'full');
 
-				$btn_href = vc_build_link($btn_link);
 				$html = '
 				<div class="icon">
 					<div class="icon__header">
-						<img src="'.$img.'" alt="'.$title.'" class="icon__header-image">
+						<img src="'.$img.'" alt="'.$icon_content.'" class="icon__header-image">
 					</div>
 					<div class="icon__content">
 						'.wpautop($icon_content).'
