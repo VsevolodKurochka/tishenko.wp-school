@@ -1,5 +1,8 @@
 .woocommerce
 
+	h1,h2,h3,h4,h5,h6
+		+my(30px, 15px)
+
 	span.onsale
 		+bgc($color-brand-4)
 
@@ -17,14 +20,14 @@
 			text-decoration: none
 
 	.single-product
-		h1,h2,h3,h4,h5,h6
-			+my(30px, 15px)
-
-		.price
-			+mb(15px)
-			+c($color-brand-4)
-			+ff('secondary')
-			+fs(20px)
+				
+		.summary
+			.price
+				+mb(15px)
+				span
+					+c($color-brand-4)
+					+ff('secondary')
+					+fs(30px)
 
 		.woocommerce-product-details__short-description
 			+mb(15px)
@@ -32,3 +35,22 @@
 		.cart
 			+d(flex)
 			+ai(center)
+
+
+			.quantity
+				input
+					+size(70px, 54px)
+					border-radius: 6px
+					border: 1px solid #ddd
+
+		.product_meta
+			+fs(14px)
+			> span
+				+d(block)
+				+offset('b', 15px)
+
+				> span,
+				> a
+					+fw(bold)
+					text-decoration: none
+					+c($color-general)
