@@ -1,0 +1,27 @@
+.cart-items
+	+r()
+	+d(inline-block)
+	text-decoration: none
+
+	+min(md)
+		+ml(30px)
+
+	&__number
+		+d(flex)
+		+ai(center)
+		+jc(center)
+		+a(-5px, -15px)
+		+size(20px)
+		border-radius: 100%
+		+bgc($color-brand-4)
+		+c($color-white)
+		+fw(bold)
+		+lh(1)
+		+fs(12px)
+		+ta(center)
+
+	&__icon
+		+d(inline-block)
+		vertical-align: middle
+		+size(20px)
+		+bgi('../img/shopping-store-cart-.svg')

@@ -53,5 +53,33 @@
 	add_filter( 'cmb2_sanitize_text', 'cmb2_sanitize_text_callback', 10, 2 );
 
 
+	/**
+	 * Show cart contents / total Ajax
+	 */
+	add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+	function woocommerce_header_add_to_cart_fragment( $fragments ) {
+		global $woocommerce;
+
+		ob_start();
+
+		?>
+		<a class="cart-items" href="<?php echo wc_get_cart_url(); ?>">
+			<span class="cart-items__icon"></span>
+			<span class="cart-items__number"><?php echo WC()->cart->get_cart_contents_count() ?></span>
+		</a>
+		<?php
+		$fragments['a.cart-items'] = ob_get_clean();
+		return $fragments;
+	}
+
+	function custom_woocommerce_cart(){
+	?>
+		<a class="cart-items" href="<?php echo wc_get_cart_url(); ?>">
+			<span class="cart-items__icon"></span>
+			<span class="cart-items__number"><?php echo WC()->cart->get_cart_contents_count() ?></span>
+		</a>
+<?php  
+	}
 
 ?>

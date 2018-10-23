@@ -12,6 +12,7 @@
 				</div>
 				<nav class="nav__menu col-12 col-md-6" id="js-navigation-menu">
 					{% include "menu.twig" with {'menu': menu.get_items} %}
+          {{function('custom_woocommerce_cart')}}
 				</nav>
         <div class="nav__addition" id="js-nav-addition">
           <button class="btn nav__addition-btn" data-action="modal" data-open="#modal-form">Оставить заявку</button>
