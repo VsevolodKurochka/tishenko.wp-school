@@ -18,37 +18,37 @@
 	}
 
 	function custom_next_post($post_id){
-	  $next_post = get_adjacent_post( true, '', true );
-	  if (is_a($next_post, 'WP_Post')){
-	  	$category = get_the_category( $next_post->ID );
+		$next_post = get_adjacent_post( true, '', true );
+		if (is_a($next_post, 'WP_Post')){
+			$category = get_the_category( $next_post->ID );
 
-	  	$echo = "<a href=" . get_permalink($next_post->ID) . " class='single-pagination__link single-pagination__link_next'>";
-	  		$echo .= "<span class='single-pagination__link-category'>".esc_html( $category[0]->name )."</span>";
-	  		$echo .= "<span class='single-pagination__link-name'>".get_the_title($next_post->ID)."</span>";
-	    $echo .= "</a>";
-	    echo $echo;
-	  }
+			$echo = "<a href=" . get_permalink($next_post->ID) . " class='single-pagination__link single-pagination__link_next'>";
+				$echo .= "<span class='single-pagination__link-category'>".esc_html( $category[0]->name )."</span>";
+				$echo .= "<span class='single-pagination__link-name'>".get_the_title($next_post->ID)."</span>";
+			$echo .= "</a>";
+			echo $echo;
+		}
 	}
 
 	function custom_prev_post($post_id){
-	  $prev_post = get_adjacent_post( true, '', false );
+		$prev_post = get_adjacent_post( true, '', false );
 
-	  if (is_a($prev_post, 'WP_Post')){
-	  	$category = get_the_category( $prev_post->ID );
+		if (is_a($prev_post, 'WP_Post')){
+			$category = get_the_category( $prev_post->ID );
 
-	  	$echo = "<a href=" . get_permalink($prev_post->ID) . " class='single-pagination__link single-pagination__link_prev'>";
-	  		$echo .= "<span class='single-pagination__link-category'>".esc_html( $category[0]->name )."</span>";
-	  		$echo .= "<span class='single-pagination__link-name'>".get_the_title($prev_post->ID)."</span>";
-	    $echo .= "</a>";
-	    echo $echo;
-	  }
+			$echo = "<a href=" . get_permalink($prev_post->ID) . " class='single-pagination__link single-pagination__link_prev'>";
+				$echo .= "<span class='single-pagination__link-category'>".esc_html( $category[0]->name )."</span>";
+				$echo .= "<span class='single-pagination__link-name'>".get_the_title($prev_post->ID)."</span>";
+			$echo .= "</a>";
+			echo $echo;
+		}
 	}
 
 	function cmb2_sanitize_text_callback( $override_value, $value ) {
-    //convert square brackets to angle brackets
-    $value = str_replace('[', '<', $value);
-    $value = str_replace(']', '>', $value);
-    return $value;
+		//convert square brackets to angle brackets
+		$value = str_replace('[', '<', $value);
+		$value = str_replace(']', '>', $value);
+		return $value;
 	}
 	add_filter( 'cmb2_sanitize_text', 'cmb2_sanitize_text_callback', 10, 2 );
 
@@ -81,5 +81,21 @@
 		</a>
 <?php  
 	}
+
+	/**
+	 * Change currency display in WooCommerce
+	 * Put this in your functions.php file
+	 *
+	 */
+
+	add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+
+	function change_existing_currency_symbol( $currency_symbol, $currency ) {
+		 switch( $currency ) {
+				case 'UAH': $currency_symbol = 'грн '; break;
+		 }
+		 return $currency_symbol;
+	}
+
 
 ?>

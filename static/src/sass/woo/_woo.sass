@@ -18,6 +18,24 @@
 
 		ins
 			text-decoration: none
+
+
+	.shop_table
+		+fs(14px)
+
+		a
+			text-decoration: none
+			+fw(bold)
+			+c($color-brand-4)
+
+		.product-quantity
+			font-family: unset
+
+	.quantity
+		input.qty
+			+size(70px, 54px)
+			border-radius: 6px
+			border: 1px solid #ddd
 	
 	// Cart
 	.woocommerce-cart-form
@@ -29,6 +47,12 @@
 				text-decoration: none
 				+fw(bold)
 				+c($color-brand-4)
+
+		table.cart td.actions .coupon .input-text
+			height: 30px
+			min-width: 120px
+			border-radius: 6px
+			+fs(11px)
 	
 	// Single product
 	.single-product
@@ -48,13 +72,6 @@
 			+d(flex)
 			+ai(center)
 
-
-			.quantity
-				input
-					+size(70px, 54px)
-					border-radius: 6px
-					border: 1px solid #ddd
-
 		.product_meta
 			+fs(14px)
 			> span
@@ -66,3 +83,45 @@
 					+fw(bold)
 					text-decoration: none
 					+c($color-general)
+
+	.woocommerce-error, .woocommerce-info, .woocommerce-message
+		+fs(14px)
+		a
+			text-decoration: none
+			+fw(bold)
+			+tr()
+			+c(inherit)
+
+	.woocommerce-form-coupon
+		+fs(14px)
+
+		.input-text
+			padding: 10px 15px
+
+	.woocommerce-checkout
+		label
+			+fs(14px)
+			+lh(1)
+			+mb(10px)
+		textarea,
+		.input-text
+			padding: 10px
+			border-radius: 6px
+			border: 1px solid #ddd
+		.select2-container--default .select2-selection--single
+			+fs(14px)
+			+h(50px)
+			.select2-selection__rendered
+				line-height: 50px
+			.select2-selection__arrow
+				+h(50px)
+
+	.woocommerce-checkout-payment
+		+fs(12px)
+
+		.woocommerce-terms-and-conditions-wrapper
+			+mb(30px)
+
+	.amount
+		> span
+			+fs(75%)

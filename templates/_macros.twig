@@ -4,7 +4,7 @@
   {% else %}
     {% set titleType = '1' %}
   {% endif %}
-  <header class="header wave_bottom" style="background-image: url({{image}})">
+  <header class="header wave_bottom" style="background-image: url({{image|resize(1600, 500)}})">
     <div class="scene">
       <div data-depth="0.4" class="bg-stars"></div>
     </div>
