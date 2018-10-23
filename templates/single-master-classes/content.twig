@@ -1,3 +1,4 @@
+{% set status = post.get_field('status') == 'Платно' %}
 <section class="section">
   <div class="container">
     <div class="single-master-classes__header">
@@ -8,8 +9,8 @@
       {% endif %}
     </div>
     <div class="single-master-classes__text">{{post.content}}</div>
-    <div class="single-master-classes__body">
-      {% if post.get_field('status') == 'Платно' %}
+    <div class="single-master-classes__body {% if status %}single-master-classes__body_pay{% endif %}">
+      {% if status %}
         {% set btn_text = "купить мастер-класс" %}
         <a href="{{post.get_field('link')}}" class="btn btn_lg btn_brand-1">{{btn_text}}</a>
         <span class="single-master-classes__body-connect">за</span>
