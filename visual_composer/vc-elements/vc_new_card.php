@@ -85,7 +85,6 @@ class vcNewCard extends WPBakeryShortCode {
 				// Fill $html var with data
 				$img = wp_get_attachment_image_url($image_url, 'full');
 
-				$btn_href = vc_build_link($btn_link);
 				$html = '
 				<div class="card">
 					<div class="card__header">
