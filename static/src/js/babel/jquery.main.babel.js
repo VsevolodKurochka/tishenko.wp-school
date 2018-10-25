@@ -1,16 +1,5 @@
 $(document).ready(function(){
 
-	function scroll(scrollLink, speed){
-		$('html, body').animate({
-			scrollTop: scrollLink.offset().top
-		}, speed);
-		return false;
-	}
-	$('.anchor').click(function(e){
-		e.preventDefault();
-		scroll($( $(this).attr('href') ), 1500);
-	});
-
 	function themeUrl(concat){
 		return `${window.location.protocol}//${window.location.hostname}:${window.location.port}/${concat}`;
 	}
@@ -28,4 +17,8 @@ $(document).ready(function(){
 			$('.home-greeting')
 				.prepend(`<video muted="" loop="" autoplay="" class="home-greeting__video"><source src="${themeUrl('wp-content/uploads/2018/10/WhatsApp-Video-2018-10-08-at-19.45.07.mp4')}" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"></video>`);
 		}
+});
+
+$(window).on('load', function(){
+	$('.preloader').fadeOut('slow');
 });
