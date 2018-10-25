@@ -1,0 +1,29 @@
+.woocommerce-MyAccount
+	&-navigation
+		ul
+			+pl(0)
+			list-style: none
+
+		li
+			+offset('b', 15px)
+			&:not(:last-child)
+				+pb(5px)
+				border-bottom: 1px solid #ddd
+
+		a
+			+d(block)
+			+c($color-general)
+			text-decoration: none
+			+fw(bold)
+			+tr()
+			
+		li.is-active,
+		a:hover
+			+c($color-brand-4)
+	&-content
+		a
+			text-decoration: none
+			+c($color-brand-4)
+			+tr()
+			&:hover
+				+c($color-brand-1)

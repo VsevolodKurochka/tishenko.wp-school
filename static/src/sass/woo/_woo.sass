@@ -117,7 +117,9 @@
 		.input-text
 			padding: 10px 15px
 
-	.woocommerce-checkout
+	.woocommerce-checkout,
+	.woocommerce-address-fields,
+	.woocommerce-MyAccount-content
 		label
 			+fs(14px)
 			+lh(1)
@@ -127,6 +129,10 @@
 			padding: 10px
 			border-radius: 6px
 			border: 1px solid #ddd
+			+ span
+					+fs(12px)
+					+pl(15px)
+					+c($color-brand-4)
 		.select2-container--default .select2-selection--single
 			+fs(14px)
 			+h(50px)
@@ -155,6 +161,7 @@
 		padding: 10px
 		margin-right: 10px
 		border: 1px solid #ddd
+		border-radius: 6px
 		+tr()
 		outline: none
 		&:focus
@@ -164,3 +171,4 @@
 		padding: 9px
 		+bgc($color-brand-4)
 		+c($color-white)
+		border-radius: 6px

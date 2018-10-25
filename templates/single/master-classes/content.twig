@@ -14,7 +14,7 @@
         {% set btn_text = "купить мастер-класс" %}
         <a href="{{post.get_field('link')}}" class="btn btn_lg btn_brand-1">{{btn_text}}</a>
         <span class="single-master-classes__body-connect">за</span>
-        <span class="single-master-classes__body-price">{{post.get_field('price')}} <sup>грн</sup></span>
+        <span class="single-master-classes__body-price">{{post.get_field('price')}}</span>
       {% else %}
         {% set btn_text = "получить мастер-класс бесплатно" %}
         <a href="{{post.get_field('link')}}" class="btn btn_lg btn_brand-1">{{btn_text}}</a>
