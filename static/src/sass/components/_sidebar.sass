@@ -16,7 +16,7 @@
 
 	.cat-item
 		+d(block)
-		+offset('b', 5px)
+		+offset('b', 10px)
 
 		a
 			+d(block)
@@ -34,12 +34,21 @@
 				+c($color-white)
 				border-color: $color-brand-3
 
-		&.current-cat
-			a
+		&.current-cat,
+		&.current-cat-parent
+			> a
 				background-image: linear-gradient( 0deg, $color-brand-1 0%, $color-brand-2 100%)
 				+c($color-white)
 				border: none
 				+fw(700)
+
+		.children
+			+mt(5px)
+			+pl(30px)
+
+			a
+				+fs(16px)
+				padding: 10px 15px
 
 	li:not(.cat-item)
 		+offset('b', 15px)
