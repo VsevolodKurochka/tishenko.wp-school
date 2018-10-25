@@ -3,11 +3,14 @@
     <div class="row blog-content__row">
       <div class="col-12 col-sm-8">
         <article class="article {{post.class}}" id="{{post.id}}">
+          <div class="article__header">
+            <img src="{{post.thumbnail}}" alt="{{post.title}}">
+          </div>
           <div class="article__content">
             {{post.content}}
-          </div>
-          <div class="article__footer">
-            <span class="date">{{post.date}}</span>
+            <div class="article__footer">
+              <span class="date">{{post.date}}</span>
+            </div>
           </div>
           <div class="author">
             <div class="author__header">
