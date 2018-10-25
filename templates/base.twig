@@ -3,9 +3,8 @@
 </head>
 <body class="{{body_class}}" data-template="base.twig">
   {% include 'preloader.twig' %}
-	{% include 'nav.twig' %}
-	<main class="site">
-
+	<main class="site" style="display: none">
+    {% include 'nav.twig' %}
 		{% block content %}
 			Sorry, no content
 		{% endblock %}

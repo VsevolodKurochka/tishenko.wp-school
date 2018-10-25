@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	function themeUrl(concat){
-		return `${window.location.protocol}//${window.location.hostname}:${window.location.port}/${concat}`;
+		return `${window.location.protocol}//${window.location.hostname}/${concat}`;
 	}
 
 	$('.wave_bottom')
@@ -20,5 +20,8 @@ $(document).ready(function(){
 });
 
 $(window).on('load', function(){
-	$('.preloader').fadeOut('slow');
+	setTimeout( () => {
+		$('.preloader').fadeOut('slow');
+		$('.site').fadeIn('slow');	
+	}, 500);
 });

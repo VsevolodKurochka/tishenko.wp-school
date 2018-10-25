@@ -147,6 +147,15 @@ class StarterSite extends TimberSite {
 			'before_title' => '<p class="sidebar__title">',
 			'after_title' => '</p>',
 		));
+
+		register_sidebar( array(
+			'name' => 'Сайдбар для магазина',
+			'id' => 'shop_sidebar',
+			'before_widget' => '<div class="sidebar__item">',
+			'after_widget' => '</div>',
+			'before_title' => '<p class="sidebar__title">',
+			'after_title' => '</p>',
+		));
 	}
 
 	function mytheme_add_woocommerce_support() {
