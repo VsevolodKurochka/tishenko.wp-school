@@ -17,6 +17,13 @@ $(document).ready(function(){
 			$('.home-greeting')
 				.prepend(`<video muted="" loop="" autoplay="" class="home-greeting__video"><source src="${themeUrl('wp-content/uploads/2018/10/WhatsApp-Video-2018-10-08-at-19.45.07.mp4')}" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"></video>`);
 		}
+
+	$('[data-action="modal"]').click(function(){
+		var text = $(this).text();
+		var open = $(this).attr('data-open');
+		$(open).find('.modal__title').text(text);
+	});
+
 });
 
 $(window).on('load', function(){
