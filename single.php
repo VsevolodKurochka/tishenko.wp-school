@@ -15,6 +15,8 @@ $context['post'] = $post;
 
 $context['blog_sidebar'] = Timber::get_widgets('blog_sidebar');
 
+$context['shop_sidebar'] = Timber::get_widgets('shop_sidebar');
+
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
