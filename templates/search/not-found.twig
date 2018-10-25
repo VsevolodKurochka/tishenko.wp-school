@@ -1,0 +1,10 @@
+{% 
+  include "partial/section-header.twig" 
+    with {
+      "title": "Вы ничего не нашли:(",
+      "subtitle": "Введите другое значение."
+    } 
+%}
+<div class="search-form">
+  {{function('get_product_search_form')}}
+</div>

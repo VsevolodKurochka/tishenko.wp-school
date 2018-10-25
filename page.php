@@ -25,4 +25,11 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+$context['shop_sidebar'] = Timber::get_widgets('shop_sidebar');
+
+if(is_product_category()){
+	$templates = array( 'page-product.twig');
+}else{
+	$templates = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
+}
+Timber::render( $templates, $context );

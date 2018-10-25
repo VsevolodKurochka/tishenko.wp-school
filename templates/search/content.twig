@@ -1,0 +1,13 @@
+<section class="section">
+  <div class="container">
+    {% if posts|length > 0 %}
+      <ul class="products">
+        {% for post in posts %}
+          {{function('wc_get_template_part', 'content', 'product')}}
+        {% endfor %}
+      </ul>
+    {% else %}
+      {% include 'search/not-found.twig' %}
+    {% endif %}
+  </div>
+</section>

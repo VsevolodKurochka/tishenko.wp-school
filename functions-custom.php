@@ -98,4 +98,35 @@
 	}
 
 
+	add_filter('loop_shop_columns', 'loop_columns');
+	if (!function_exists('loop_columns')) {
+		function loop_columns() {
+			return 2; // 2 products per row
+		}
+	}
+
+
+	/**
+	 * Change number of related products output
+	 */
+	add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+  function jk_related_products_args( $args ) {
+		$args['posts_per_page'] = 3; // 4 related products
+		$args['columns'] = 3; // arranged in 2 columns
+		return $args;
+	}
+
+	/**
+	 * Change number of upsells output
+	 */
+	add_filter( 'woocommerce_upsell_display_args', 'wc_change_number_related_products' );
+
+	function wc_change_number_related_products( $args ) {
+	 
+	 $args['posts_per_page'] = 3;
+	 $args['columns'] = 3; //change number of upsells here
+	 return $args;
+	}
+
+
 ?>
