@@ -1,11 +1,18 @@
 <section class="section woocommerce">
   <div class="container">
     {% if posts|length > 0 %}
-      <ul class="products">
-        {% for post in posts %}
-          {{function('wc_get_template_part', 'content', 'product')}}
-        {% endfor %}
-      </ul>
+      <div class="row min_sm-sb">
+        <div class="col-12 col-sm-8">
+          <ul class="products columns-2">
+            {% for post in posts %}
+              {{function('wc_get_template_part', 'content', 'product')}}
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="sidebar col-12 col-sm-4 col-md-3">
+          {{shop_sidebar}}
+        </div>
+      </div>
     {% else %}
       {% include 'search/not-found.twig' %}
     {% endif %}

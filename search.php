@@ -14,5 +14,6 @@ $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 $context          = Timber::get_context();
 $context['title'] = "Вы искали: " . get_search_query();
 $context['posts'] = new Timber\PostQuery();
+$context['shop_sidebar'] = Timber::get_widgets('shop_sidebar');
 
 Timber::render( $templates, $context );
