@@ -144,3 +144,23 @@
 	.amount
 		> span
 			+fs(75%)
+
+
+.woocommerce-product-search
+	+d(flex)
+	+ai(center)
+	input
+		flex-basis: 0
+		flex-grow: 1
+		padding: 10px
+		margin-right: 10px
+		border: 1px solid #ddd
+		+tr()
+		outline: none
+		&:focus
+			border-color: $color-brand-4
+	button
+		+btn()
+		padding: 9px
+		+bgc($color-brand-4)
+		+c($color-white)
