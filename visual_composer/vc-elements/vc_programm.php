@@ -90,7 +90,7 @@ class vcNewProgramm extends WPBakeryShortCode {
 										),
 
 										array(
-											'type' => 'vc_link',
+											'type' => 'textarea',
 											'holder' => 'p',
 											'class' => 'title-class',
 											'heading' => __( 'Ссылка кнопки:', 'visotskiy' ),
@@ -129,8 +129,7 @@ class vcNewProgramm extends WPBakeryShortCode {
 				// Fill $html var with data
 				$icon_url = wp_get_attachment_image_url($icon, 'full');
 
-				$btn_href = vc_build_link($btn_link);
-				$link = '<a href="'.site_url($btn_href["url"]).'" class="btn btn_brand-1 btn_lg programm__button" target="_blank">Узнать подробности</a>';
+				$link = '<a href="'.$btn_link.'" class="btn btn_brand-1 btn_lg programm__button" target="_blank">Узнать подробности</a>';
 
 				$html = '
 				<div class="programm" style="background-color: '.$color.'">
