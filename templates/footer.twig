@@ -1,2 +1,36 @@
-{% include 'footer/statistics.twig' %}
-{% include 'footer/footer.twig' %}
+{% if function('is_front_page') %}
+  {% set image = options.footer_bg_2 %}
+  {% set person = options.footer_person_2 %}
+  {% set person_class = "statistics__person_2" %}
+{% else %}
+  {% set image = options.footer_bg_1 %}
+  {% set person = options.footer_person_1 %}
+  {% set person_class = "statistics__person_1" %}
+{% endif %}
+<section class="statistics wave_top" style="background-image: url({{image}})">
+  <div class="scene statistics__person-scene">
+    <div data-depth="0.2" class="statistics__person-cover"><img src="{{person}}" alt="{{options.footer_title}}" class="statistics__person {{person_class}}"></div>
+  </div>
+  <div class="scene">
+    <div data-depth="0.4" class="bg-stars"></div>
+  </div>
+  <div class="container">
+    <p class="statistics__subtitle title-sm">{{options.footer_subtitle}}</p>
+    <p class="statistics__title title-md">{{options.footer_title}}</p>
+    <button class="btn btn_lg btn_brand-1" data-action="modal" data-open="#modal-form">{{options.footer_btn}}</button>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__row row">
+      <div class="col-12 col-sm-3">
+        {{function('get_custom_logo')}}   
+      </div>
+      <div class="col-12 col-sm-9">
+        <div class="footer__menu">
+          {% include "menu-footer.twig" with {'menu': menu_footer.get_items} %}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
