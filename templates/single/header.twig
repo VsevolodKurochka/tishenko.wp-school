@@ -1,1 +1,7 @@
-{{ siteMacros.header(post.title, post.thumbnail ) }}
+{{ 
+  siteMacros.header({
+    "title": post.title,
+    "image": post.thumbnail,
+    "theme_url": theme_url
+  }) 
+}}

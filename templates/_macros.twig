@@ -1,15 +1,20 @@
-{% macro header(title, image, type) %}
-  {% if type %}
-    {% set titleType = type %}
+{% macro header(options) %}
+  {% if options.type %}
+    {% set title_type = options.type %}
   {% else %}
-    {% set titleType = '1' %}
+    {% set title_type = '1' %}
   {% endif %}
-  <header class="header wave_bottom" style="background-image: url({{image|resize(1600, 500)}})">
+  {% if options.image %}
+    {% set image_url = options.image %}
+  {% else %}
+    {% set image_url = "#{options.theme_url}/static/build/img/footer-bg-2.jpg" %}
+  {% endif %}
+  <header class="header wave_bottom l" style="background-image: url({{image_url|resize(1600, 500)}})">
     <div class="scene">
       <div data-depth="0.4" class="bg-stars"></div>
     </div>
     <div class="container">
-      <h{{titleType}} class="header__title title-md">{{title}}</h{{titleType}}>
+      <h{{title_type}} class="header__title title-md">{{options.title}}</h{{title_type}}>
     </div>
   </header>
 {% endmacro %}
