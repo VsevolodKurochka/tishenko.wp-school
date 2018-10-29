@@ -1,7 +1,7 @@
 .footer
-	+py(15px)
-	+fs(0)
-	+bgc(#181818)
+	+pt(30px)
+	+fs(16px)
+	+bgc(#202020)
 
 	.custom-logo-link
 		+d(block)
@@ -12,35 +12,74 @@
 		img
 			+w(auto)
 			max-height: 30px
-	
-	&__row
-		+min(sm)
-			+ai(center)
-	
+
+	&__title
+		+mb(30px)
+		+fw(bold)
+		text-transform: uppercase
+		+c($color-white)
+
+	&__container
+		+mb(30px)
+
 	&__menu
-		+min(sm)
-			text-align: right
 		li
 			+d(block)
-			
-			+max(sm)
-				+offset('b', 15px)
-			
+			+offset('b', 5px)
+		a
+			+d(block)
+			+tr()
+			text-decoration: none
+			+c(#848484)
+
+			&:hover
+				+c($color-brand-4)
+
+	&__social
+		li
+			+d(inline-block)
+			vertical-align: middle
+			+offset('r', 15px)
+
+	&__link
+		+d(block)
+		+tr()
+		+c(inherit)
+		+fs(inherit)
+
+		&:hover
+			+c($color-brand-4)
+	
+	&__copy
+		+py(10px)
+		+bgc(#181818)
+		&-row
 			+min(sm)
+				+ai(center)
+		&-menu
+			+min(sm)
+				text-align: right
+			li
+				+d(block)
+				
+				+max(sm)
+					+offset('b', 15px)
+				
+				+min(sm)
 
-				+d(inline-block)
-				vertical-align: middle
-				+offset('r', 15px)
-			
-			a
-				+c(#525252)
-				+fs(14px)
-				text-decoration: none
-				+fw(bold)
-				+tr()
+					+d(inline-block)
+					vertical-align: middle
+					+offset('r', 15px)
+				
+				a
+					+c(#525252)
+					+fs(14px)
+					text-decoration: none
+					+fw(bold)
+					+tr()
 
-				&:hover
+					&:hover
+						+c(lighten(#525252, 15%))
+
+				&.current-menu-item a
 					+c(lighten(#525252, 15%))
-
-			&.current-menu-item a
-				+c(lighten(#525252, 15%))

@@ -95,7 +95,7 @@ class StarterSite extends TimberSite {
 
 	function register_taxonomies() {
 		//this is where you can register custom taxonomies
-		register_taxonomy('master_classes', array('master-classes'), array(
+		register_taxonomy('mc-category', array('master-classes'), array(
 			'label'                 => '', // определяется параметром $labels->name
 			'labels'                => array(
 				'name'              => 'Категории мастер-классов',
@@ -109,7 +109,31 @@ class StarterSite extends TimberSite {
 				'update_item'       => 'Обновить категория мастер-классов',
 				'add_new_item'      => 'Добавить категорию мастер-классов',
 				'new_item_name'     => 'Добавить новую категорию мастер-классов',
-				'menu_name'         => 'Категории мастер-классов',
+				'menu_name'         => 'Категории',
+			),
+			'description'           => 'Категории для мастер-классов', // описание таксономии
+			'public'                => true,
+			'hierarchical'          => false,
+			'rewrite' 							=> true,
+			'query_var' => true,
+		) );
+
+		// Метки
+		register_taxonomy('mc-tag', array('master-classes'), array(
+			'label'                 => '', // определяется параметром $labels->name
+			'labels'                => array(
+				'name'              => 'Метки мастер-классов',
+				'singular_name'     => 'Метки мастер-классов',
+				'search_items'      => 'Искать Метки мастер-классов',
+				'all_items'         => 'Все Метки мастер-классов',
+				'view_item '        => 'Смотреть метку мастер-классов',
+				'parent_item'       => 'Родительская метка мастер-классов',
+				'parent_item_colon' => 'Родительская метка мастер-классов:',
+				'edit_item'         => 'Редактировать метку мастер-классов',
+				'update_item'       => 'Обновить метка мастер-классов',
+				'add_new_item'      => 'Добавить метку мастер-классов',
+				'new_item_name'     => 'Добавить новую метку мастер-классов',
+				'menu_name'         => 'Метки',
 			),
 			'description'           => 'Категории для мастер-классов', // описание таксономии
 			'public'                => true,

@@ -87,13 +87,15 @@ class vcPhotoMask extends WPBakeryShortCode {
 
 				$image_photo_html = wp_get_attachment_image_url($image_photo, 'full');
 				$image_mask_html = wp_get_attachment_image_url($image_mask, 'full');
-				 
 
-				$html = '
-				<div class="photo-mask '.$photo_mask_class.'">
-					<img src="'.$image_photo_html.'" alt="Photo mask" class="photo-mask__under">
-					<img src="'.$image_mask_html.'" alt="Photo mask" class="photo-mask__cover">
-				</div>';
+				$html = Timber::compile( 
+					'partial/photo-mask.twig', 
+					array(
+						'class'	=> $photo_mask_class,
+						'photo'	=> $image_photo_html,
+						'mask'	=> $image_mask_html
+					) 
+				);
 				 
 				return $html;
 				 

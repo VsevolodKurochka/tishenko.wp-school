@@ -4,7 +4,6 @@
 	+ta(center)
 	+blackout(0.7)
 	+c($color-white)
-	overflow: hidden	
 
 	&_front
 		+mt(0)
@@ -17,12 +16,21 @@
 
 	> .row
 		+mx(0)
+
+	> .container
+		z-index: 2
+
+	.scene
+		z-index: 1
 			
 	&__title
 		+mt(0)
 		+ff('secondary')
 		+c($color-white)
 		text-shadow: 0px 7px 12px rgba(0, 0, 0, 0.18)
+
+		span
+			+fs(200%)
 
 	&__subtitle
 		+mb(30px)

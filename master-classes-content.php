@@ -41,7 +41,7 @@ if ( is_day() ) {
 //$context['background'] = get_template_directory_uri() . '/static/build/img/bg-food-' . rand(1, 3) . '.jpg';
 
 $context['terms'] = get_terms( array(
-	'taxonomy' => 'master_classes',
+	'taxonomy' => 'category',
 	'hide_empty' => true,
 ));
 

@@ -29,3 +29,35 @@
 
 			+min(md)
 				+fs(30px)
+
+		p
+			+mb(15px)
+			+ff('secondary')
+			+c($color-brand-4)
+
+		form
+			> div
+				+mb(15px)
+
+			select
+				min-width: 200px
+				padding: 10px
+				border-radius: 5px
+				border: 1px solid #ddd
+				+fs(14px)
+
+	&__text
+		+fs(16px)
+		p
+			+offset('b', 15px)
+		+min(sm)
+			max-width: 600px
+			+mx(auto)
+			+mb(60px)
+
+		+min(md)
+			max-width: 700px
+
+	&__row
+		> div
+			+offset('b', 30px)

@@ -1,0 +1,22 @@
+.page-charity
+	&__partners
+		+min(sm)
+			+mb(300px)
+
+		&-footer
+			+mt(60px)
+			+ta(center)
+			+fs(16px)
+
+			p
+				+offset('b', 10px)
+
+			a
+				+d(inline-block)
+				+ff('secondary')
+				text-decoration: none
+				+c($color-brand-4)
+				+tr()
+
+				&:hover
+					+c($color-brand-1)
