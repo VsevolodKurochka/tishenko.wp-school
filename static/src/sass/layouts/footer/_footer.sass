@@ -2,6 +2,7 @@
 	+pt(30px)
 	+fs(16px)
 	+bgc(#202020)
+	color: #848484
 
 	.custom-logo-link
 		+d(block)
@@ -14,13 +15,24 @@
 			max-height: 30px
 
 	&__title
-		+mb(30px)
+		+mb(10px)
 		+fw(bold)
 		text-transform: uppercase
 		+c($color-white)
+		+min(sm)
+			+mb(30px)
 
 	&__container
 		+mb(30px)
+
+	&__column
+		+max(sm)
+			+offset('b', 30px)
+		+min(sm)
+			+max(md)
+				&:nth-child(1),
+				&:nth-child(2)
+					margin-bottom: 30px
 
 	&__menu
 		li
@@ -30,10 +42,13 @@
 			+d(block)
 			+tr()
 			text-decoration: none
-			+c(#848484)
+			+c(inherit)
 
 			&:hover
 				+c($color-brand-4)
+
+	&__group
+		+offset('b', 15px)
 
 	&__social
 		li
@@ -46,6 +61,7 @@
 		+tr()
 		+c(inherit)
 		+fs(inherit)
+		text-decoration: none
 
 		&:hover
 			+c($color-brand-4)
