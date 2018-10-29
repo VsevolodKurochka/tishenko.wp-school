@@ -78,7 +78,7 @@
 				a:hover,
 				li.current-menu-item a
 					color: $color-white
-					background-color: $color-brand-4
+					background-color: $color-brand-2
 
 		&:hover > ul
 			opacity: 1
@@ -100,5 +100,6 @@
 					color: $color-white
 
 				> a:hover,
-				&.current-menu-item a
-					color: $color-brand-4
+				&.current-menu-parent > a,
+				&.current-menu-item > a
+					color: $color-brand-2
