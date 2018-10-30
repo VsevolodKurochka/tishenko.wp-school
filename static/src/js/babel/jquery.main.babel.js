@@ -24,6 +24,48 @@ $(document).ready(function(){
 		$(open).find('.modal__title').text(text);
 	});
 
+	// Archive
+	$('#mc-form').submit(function(e){
+		e.preventDefault();
+
+		// Declare info object with information about submited form
+		var info = {};
+
+		// Get info about selected category
+		var cat = $('#select-cat').val();
+		var catTax = $('input[name="tax_category"]').val();
+
+
+		var tag = $('#select-tag').val();
+		var tagTax = $('input[name="tax_tag"]').val();
+
+		var homeUrl = $('input[name="home_url"]').val();
+		var redirectUrl = '';
+
+		// If exists
+		info.cat = cat;
+
+		info.tag = tag;
+
+		// If only category
+		if( info.cat != -1 && info.tag == -1){
+			redirectUrl = `${homeUrl}/${catTax}`;
+		}
+
+		// If only tag
+		if( info.tag != -1 && info.cat == -1){
+			redirectUrl = `${homeUrl}/${tagTax}`;
+		}
+
+		// If tag and category
+		if( info.tag != -1 && info.cat != -1){
+			redirectUrl = `${homeUrl}/${catTax}/${tagTax}`;
+		}
+
+		console.log(redirectUrl);
+		//console.log(info);
+	});
+
 });
 
 $(window).on('load', function(){

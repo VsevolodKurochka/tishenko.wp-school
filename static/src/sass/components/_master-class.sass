@@ -14,8 +14,18 @@
 		&-title
 			+ff('secondary')
 			text-transform: uppercase
+			text-decoration: none
 			+min(sm)
 				+fs(21px)
+
+		a
+			text-decoration: none
+			+fs(18px)
+			+tr()
+			+c($color-general)
+
+			&:hover
+				+c($color-brand-4)
 
 	&__body
 		+fs(0)
