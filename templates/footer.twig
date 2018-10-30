@@ -21,14 +21,53 @@
   </div>
 </section>
 <footer class="footer">
-  <div class="container">
-    <div class="footer__row row">
-      <div class="col-12 col-sm-3">
-        {{function('get_custom_logo')}}   
-      </div>
-      <div class="col-12 col-sm-9">
+  <div class="container footer__container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-3 footer__column">
+        <p class="footer__title">Компания</p>
         <div class="footer__menu">
-          {% include "menu-footer.twig" with {'menu': menu_footer.get_items} %}
+          {% include "menu-footer.twig" with {'menu': menu_footer_1.get_items} %}
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 footer__column">
+        <p class="footer__title">ПРОГРАММЫ</p>
+        <div class="footer__menu">
+          {% include "menu-footer.twig" with {'menu': menu_footer_2.get_items} %}
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 footer__column">
+        <p class="footer__title">Контакты</p>
+        <div class="footer__group">
+          <p class="footer__subtitle">Телефон</p>
+          <a href="tel: {{options.phone}}" class="footer__link">{{options.phone}}</a>
+        </div>
+        <div class="footer__group">
+          <p class="footer__subtitle">Email</p>
+          <a href="tel: {{options.email}}" class="footer__link">{{options.email}}</a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 footer__column">
+        <p class="footer__title">Мы в социальных сетях</p>
+        <ul class="footer__social">
+          {% for item in options.social %}
+            <li>
+              <a href="{{item.link}}"><img src="{{item.icon}}" alt="#"></a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__copy">
+    <div class="container">
+      <div class="footer__copy-row row">
+        <div class="col-12 col-sm-3">
+          {{function('get_custom_logo')}}
+        </div>
+        <div class="col-12 col-sm-9">
+          <div class="footer__copy-menu">
+            {% include "menu-footer.twig" with {'menu': menu_footer.get_items} %}
+          </div>
         </div>
       </div>
     </div>

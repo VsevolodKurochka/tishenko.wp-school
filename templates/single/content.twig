@@ -1,0 +1,34 @@
+<section class="section blog-content">
+  <div class="container">
+    <div class="row blog-content__row">
+      <div class="col-12 col-sm-8">
+        <article class="article {{post.class}}" id="{{post.id}}">
+          <div class="article__header">
+            <img src="{{post.thumbnail}}" alt="{{post.title}}">
+          </div>
+          <div class="article__content">
+            {{post.content}}
+            <div class="article__footer">
+              <span class="date">{{post.date}}</span>
+            </div>
+          </div>
+          <div class="author">
+            <div class="author__header">
+              <img
+                class="author__image" 
+                src="{{post.author.get_field('avatar')|resize(90,90)}}" 
+                alt="{{post.author.first_name}} {{post.author.last_name}}">
+            </div>
+            <div class="author__body">
+              <p class="author__body-title">{{post.author.first_name}} {{post.author.last_name}}</p>
+              <p>Автор</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-sm-4 col-md-3">
+        {% include 'sidebar.twig' %}
+      </div>
+    </div>
+  </div>
+</section>

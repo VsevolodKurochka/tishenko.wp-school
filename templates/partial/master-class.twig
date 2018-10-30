@@ -1,7 +1,16 @@
 <div class="master-class">
   <div class="master-class__header">
     <p class="master-class__header-title">{{title}}</p>
-    <p class="master-class__header-subtitle">{{subtitle}}</p>
+    {% if subtitle_link %}
+      <a href="{{subtitle_link}}" class="master-class__header-subtitle">{{subtitle}}</a>
+    {% else %}
+      {% if subtitle %}
+        <p class="master-class__header-subtitle">{{subtitle}}</p>
+      {% endif %}
+    {% endif %}
+    {% if term_list %}
+      {{term_list}}
+    {% endif %}
   </div>
   <div class="master-class__body">
     <a href="{{url}}" target="_blank"><img src="{{image}}" alt="{{title}}" class="master-class__body-image"></a>

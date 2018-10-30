@@ -5,14 +5,44 @@
       <p>Они прибыли из живописных городов Акварелии, Графикии и Географии, чтобы поделиться знаниями. Дружелюбной цивилизации требуется помощь детей 3-15 лет!</p>
       <p>Любящих рисовать призываем как можно скорее взять карандаши кисточки и краски и отправиться в незабываемое путешествие по новому увлекательному миру живописи с весёлыми смартиками.</p>
     </div>
+
     <div class="post-type-archive-master-classes__nav">
-      <p class="post-type-archive-master-classes__nav-title">категории мастер-классов</p>
-      <ul>
-        {% for term in terms %}
-          {% set active = (function('is_tax', 'master_classes', term.slug)) ? 'active' : 'non-active' %}
+      {#{mc_sidebar}#}
+      <!-- <p class="post-type-archive-master-classes__nav-title">категории мастер-классов</p> -->
+      <!-- <ul> -->
+        {#% for term in terms %}
+          {% set active = (function('is_tax', 'mc-category', term.slug)) ? 'active' : 'non-active' %}
           <li><a href="{{function('get_term_link', term)}}" class="{{active}}">{{term.name}}</a></li>
-        {% endfor %}
-      </ul>
+        {% endfor %#}
+        
+      <!-- </ul> -->
+      <p class="post-type-archive-master-classes__nav-title">Категории мастер-классов</p>
+      <form action="#" method="POST" class="post-type-archive-master-classes__form" id="mc-form">
+        <input type="hidden" name="tax_tag" value="{{tax_tag}}">
+        <input type="hidden" name="tax_category" value="{{tax_category}}">
+        <input type="hidden" name="home_url" value="{{site.url}}">
+        <input type="hidden" name="mc_url" value="{{site.url}}/master-classes">
+        <div id="mc-form-categories">
+          <select name="cat" id="select-cat" class="postform">
+            <option value="-1">Любая категория</option>
+            {% for cat in mc_categories %}
+              {% set selected = (function('is_tax', tax_category, cat.slug)) ? 'selected' : '' %}
+              <option value="{{cat.slug}}" {{selected}}>{{cat.name}}</option>
+            {% endfor %}
+          </select>  
+        </div>
+        <div id="mc-form-tags">
+          <select name="tag" id="select-tag" class="postform">
+            <option value="-1">Любой возраст</option>
+            {% for term in mc_terms %}
+              <option value="{{term.slug}}" {{selected}}>{{term.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div id="mc-form-submit-row">
+          <button id="ctf-submit" class="btn btn_brand-1" type="submit">Показать мастер-классы</button>
+        </div>
+      </form>
     </div>
     <div class="post-type-archive-master-classes__row row">
       {% for post in posts %}
@@ -22,7 +52,7 @@
           {%
             include 'partial/master-class.twig' with {
               'title': post.title,
-              'subtitle': post.terms('categories-master-classes')|join(', '),
+              'term_list': function('get_the_term_list', post.id, 'mc-category'),
               'image': image|resize(465,250),
               'excerpt': post.post_content|excerpt(10),
               'price': price,

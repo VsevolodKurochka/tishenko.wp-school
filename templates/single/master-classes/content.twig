@@ -12,7 +12,7 @@
     <div class="single-master-classes__body {% if status %}single-master-classes__body_pay{% endif %}">
       {% if status %}
         {% set btn_text = "купить мастер-класс" %}
-        <a href="{{post.get_field('link')}}" class="btn btn_lg btn_brand-1">{{btn_text}}</a>
+        <button href="{{post.get_field('link')}}" class="btn btn_lg btn_brand-1" data-action="modal" data-open="#modal-mc-form">{{btn_text}}</button>
         <span class="single-master-classes__body-connect">за</span>
         <span class="single-master-classes__body-price">{{post.get_field('price')}}</span>
       {% else %}
@@ -22,3 +22,16 @@
     </div>
   </div>
 </section>
+{% if status %}
+<div class="modal" id="modal-mc-form">
+  <div class="modal__box modal__box_default modal__box_effect-1">
+    <div class="modal__header">
+      <p class="modal__title">Купить мастер-класс</p>
+      <button class="modal__close" data-close="modal">&times;</button>
+    </div>
+    <div class="modal__body">
+      <script id="{{post.get_field('script_id')}}" src="{{post.get_field('script_src')}}"></script>
+    </div>
+  </div>
+</div>
+{% endif %}
