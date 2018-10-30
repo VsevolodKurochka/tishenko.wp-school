@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$(open).find('.modal__title').text(text);
 	});
 
-	// Archive
+	// Master Class form submit
 	$('#mc-form').submit(function(e){
 		e.preventDefault();
 
@@ -40,7 +40,7 @@ $(document).ready(function(){
 		var tagTax = $('input[name="tax_tag"]').val();
 
 		var homeUrl = $('input[name="home_url"]').val();
-		var redirectUrl = '';
+		var redirectUrl = $('input[name="mc_url"]').val();
 
 		// If exists
 		info.cat = cat;
@@ -49,23 +49,38 @@ $(document).ready(function(){
 
 		// If only category
 		if( info.cat != -1 && info.tag == -1){
-			redirectUrl = `${homeUrl}/${catTax}`;
+			redirectUrl = `${homeUrl}/${catTax}/${cat}`;
 		}
 
 		// If only tag
 		if( info.tag != -1 && info.cat == -1){
-			redirectUrl = `${homeUrl}/${tagTax}`;
+			redirectUrl = `${homeUrl}/${tagTax}/${tag}`;
 		}
 
 		// If tag and category
 		if( info.tag != -1 && info.cat != -1){
-			redirectUrl = `${homeUrl}/${catTax}/${tagTax}`;
+			redirectUrl = `${homeUrl}/${catTax}/${cat}/${tagTax}/${tag}`;
 		}
 
-		console.log(redirectUrl);
+		window.location = redirectUrl;
+
+		//console.log(redirectUrl);
 		//console.log(info);
 	});
 
+	// Check if this is Master Class page
+	var href = window.location.href;
+	var indexOfHref = 'mc-tag';
+	if( href.indexOf(indexOfHref) > -1 ){
+		href = href.slice(href.indexOf(indexOfHref) + indexOfHref.length + 1);
+		href = href.replace('/', '');
+		console.log(href);
+		$("#select-tag > option").each(function(){
+			if(this.value == href){
+				$(this).attr('selected', 'selected');
+			}
+		});
+	}
 });
 
 $(window).on('load', function(){
