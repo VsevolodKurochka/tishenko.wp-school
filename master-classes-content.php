@@ -39,11 +39,24 @@ if ( is_day() ) {
 }
 
 //$context['background'] = get_template_directory_uri() . '/static/build/img/bg-food-' . rand(1, 3) . '.jpg';
+$tax_tag = 'mc-tag';
+$tax_category = 'mc-category';
 
-$context['terms'] = get_terms( array(
-	'taxonomy' => 'category',
-	'hide_empty' => true,
+$context['tax_tag'] = $tax_tag;
+$context['tax_category'] = $tax_category;
+//$context['test'] = get_queried_object();
+
+$context['mc_terms'] = get_terms( array(
+	'taxonomy' => $tax_tag,
+	'hide_empty' => true
 ));
+
+$context['mc_categories'] = get_terms( array(
+	'taxonomy' => $tax_category,
+	'hide_empty' => true
+));
+
+$context['mc_sidebar'] = Timber::get_widgets('mc_sidebar');
 
 
 $context['posts'] = new Timber\PostQuery();

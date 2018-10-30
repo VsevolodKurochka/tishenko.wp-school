@@ -86,7 +86,7 @@ class StarterSite extends TimberSite {
 			'public'              => true,
 			'hierarchical'        => false,
 			'supports'            => array('title', 'thumbnail', 'editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-			'taxonomies'          => array('master-classes'),
+			'taxonomies'          => array('mc-category', 'mc-tag'),
 			'has_archive'         => true,
 			'rewrite'             => true,
 			'query_var'           => true
@@ -115,7 +115,7 @@ class StarterSite extends TimberSite {
 			'public'                => true,
 			'hierarchical'          => false,
 			'rewrite' 							=> true,
-			'query_var' => true,
+			'query_var' 						=> true,
 		) );
 
 		// Метки
@@ -139,7 +139,7 @@ class StarterSite extends TimberSite {
 			'public'                => true,
 			'hierarchical'          => false,
 			'rewrite' 							=> true,
-			'query_var' => true,
+			'query_var' 						=> true,
 		) );
 	}
 
@@ -159,6 +159,8 @@ class StarterSite extends TimberSite {
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Меню в шапке', 'school' ),
 			'menu-footer' => esc_html__( 'Меню в футере', 'school' ),
+			'menu-footer-1' => esc_html__( 'Меню в футере(компания)', 'school' ),
+			'menu-footer-2' => esc_html__( 'Меню в футере(программы)', 'school' ),
 		) );
 	}
 
@@ -178,6 +180,15 @@ class StarterSite extends TimberSite {
 			'before_widget' => '<div class="sidebar__item">',
 			'after_widget' => '</div>',
 			'before_title' => '<p class="sidebar__title">',
+			'after_title' => '</p>',
+		));
+
+		register_sidebar( array(
+			'name' => 'Сайдбар для мастер-классов',
+			'id' => 'mc_sidebar',
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+			'before_title' => '<p>',
 			'after_title' => '</p>',
 		));
 	}
@@ -200,6 +211,8 @@ class StarterSite extends TimberSite {
 	function add_to_context( $context ) {
 		$context['menu'] = new TimberMenu('menu-1');
 		$context['menu_footer'] = new TimberMenu('menu-footer');
+		$context['menu_footer_1'] = new TimberMenu('menu-footer-1');
+		$context['menu_footer_2'] = new TimberMenu('menu-footer-2');
 		$context['options'] = get_fields('option');
 		$context['theme_url'] = get_template_directory_uri();
 		$context['site'] = $this;
