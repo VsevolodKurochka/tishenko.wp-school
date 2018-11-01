@@ -63,9 +63,6 @@ $(document).ready(function(){
 		}
 
 		window.location = redirectUrl;
-
-		//console.log(redirectUrl);
-		//console.log(info);
 	});
 
 	// Check if this is Master Class page
